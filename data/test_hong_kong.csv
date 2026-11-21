@@ -1,0 +1,14 @@
+date,event_name,event_tier,stage,format,team_a,team_b,rank_a,rank_b,winrate_3m_a,winrate_3m_b,winner
+2026-11-11,BLAST Rivals 2026 Season 2,S-Tier LAN,Groups,BO3,FURIA,Legacy,2,14,0.5714,0.5373,1
+2026-11-11,BLAST Rivals 2026 Season 2,S-Tier LAN,Groups,BO3,Vitality,Falcons,3,6,0.6714,0.5660,1
+2026-11-11,BLAST Rivals 2026 Season 2,S-Tier LAN,Groups,BO3,Spirit,FUT,4,9,0.6452,0.5882,1
+2026-11-11,BLAST Rivals 2026 Season 2,S-Tier LAN,Groups,BO3,MOUZ,G2,1,12,0.6933,0.4762,0
+2026-11-12,BLAST Rivals 2026 Season 2,S-Tier LAN,Groups,BO3,Falcons,Legacy,6,14,0.5660,0.5373,1
+2026-11-12,BLAST Rivals 2026 Season 2,S-Tier LAN,Groups,BO3,FURIA,Vitality,2,3,0.5714,0.6714,1
+2026-11-12,BLAST Rivals 2026 Season 2,S-Tier LAN,Groups,BO3,MOUZ,FUT,1,9,0.6933,0.5882,1
+2026-11-12,BLAST Rivals 2026 Season 2,S-Tier LAN,Groups,BO3,G2,Spirit,12,4,0.4762,0.6452,0
+2026-11-13,BLAST Rivals 2026 Season 2,S-Tier LAN,Playoffs,BO3,MOUZ,Vitality,1,3,0.6933,0.6714,1
+2026-11-13,BLAST Rivals 2026 Season 2,S-Tier LAN,Playoffs,BO3,G2,Falcons,12,6,0.4762,0.5660,0
+2026-11-14,BLAST Rivals 2026 Season 2,S-Tier LAN,Playoffs,BO3,MOUZ,Spirit,1,4,0.6933,0.6452,0
+2026-11-14,BLAST Rivals 2026 Season 2,S-Tier LAN,Playoffs,BO3,FURIA,Falcons,2,6,0.5714,0.5660,1
+2026-11-15,BLAST Rivals 2026 Season 2,S-Tier LAN,Playoffs,BO5,Spirit,FURIA,4,2,0.6452,0.5714,0
