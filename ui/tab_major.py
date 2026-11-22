@@ -1,8 +1,9 @@
 # Hub-ul principal Major: Pick'Em Bracket + Match-by-Match (Map Veto/Score/Rounds) + Playoffs
 import streamlit as st
+import numpy as np
 import pandas as pd
 from core.model_engine import load_predictor, predict_match_context, predict_match_with_team_stats
-from core.swiss_sim import simulate_swiss_stage, REGION_SOS_DEFAULT
+from core.swiss_sim import simulate_swiss_stage, simulate_swiss_match_by_match, REGION_SOS_DEFAULT
 from core.playoff_sim import simulate_playoffs_exact
 from core.team_stats_engine import (
     load_team_stats,
@@ -41,7 +42,7 @@ def render_major_hub():
         st.markdown("### 🏆 Valve Major Swiss Pick'Em Engine")
         st.caption("Ordinea rândurilor 1–16 reprezintă **VRS Seeding-ul oficial** (Runda 1: 1 vs 9 ... 8 vs 16; Rundele 2–5: Buchholz + VRS Seed).")
 
-        c_cfg1, c_cfg2, c_cfg3, c_cfg4 = st.columns([2, 1, 1, 1.3])
+        c_cfg1, c_cfg2, c_cfg3, c_cfg4, c_cfg5 = st.columns([1.8, 1.3, 1.0, 1.0, 1.2])
         with c_cfg1:
             stage_mode = st.selectbox(
                 "Etapa Majorului (Format meciuri)",
@@ -52,11 +53,20 @@ def render_major_hub():
                 index=0
             )
         with c_cfg2:
-            n_sims = st.selectbox("Simulări Monte Carlo", [2000, 5000, 10000], index=2)
+            sim_engine_mode = st.selectbox(
+                "Mod Simulare Pick'Em",
+                [
+                    "Monte Carlo Probabilist (V1)",
+                    "Meci-cu-Meci & Buchholz (majors.im style)"
+                ],
+                index=0
+            )
         with c_cfg3:
-            use_sos = st.checkbox("Ajustare Regiune / SoS", value=True, help="Penalizează ușor winrate-ul umflat din regiuni/turnee mai accesibile.")
+            n_sims = st.selectbox("Simulări MC", [2000, 5000, 10000], index=2)
         with c_cfg4:
-            use_tstats_swiss = st.checkbox("Detaliu Team Stats", value=True, help="Integrează delta față de baseline, penalizarea de distress și volatilitatea.")
+            use_sos = st.checkbox("Regiune / SoS", value=True, help="Penalizează ușor winrate-ul umflat din regiuni/turnee mai accesibile.")
+        with c_cfg5:
+            use_tstats_swiss = st.checkbox("Team Stats", value=True, help="Integrează forma recentă, round diff, veto, H2H și volatilitatea.")
 
         default_teams = pd.DataFrame({
             'team': [
@@ -88,6 +98,12 @@ def render_major_hub():
             }
         )
 
+        m_opt1, m_opt2 = st.columns([1, 2])
+        with m_opt1:
+            mbm_seed = st.number_input("Seed Traseu Meci-cu-Meci", 1, 99999, 123, step=1)
+        with m_opt2:
+            mbm_det = st.checkbox("Alegere deterministă (mereu favoritul probabilității pe fiecare meci)", value=False)
+
         if st.button("🚀 GENEREAZĂ BRACKET PICK'EM", type="primary", use_container_width=True):
             sim_input = edited_df.copy()
             if not use_sos:
@@ -95,49 +111,128 @@ def render_major_hub():
 
             as_of_val = default_as_of or None
 
-            with st.spinner(f"Rulăm {n_sims} simulări oficiale Valve Major (VRS + Buchholz)..."):
-                sim_res = simulate_swiss_stage(
-                    sim_input,
-                    model,
-                    scaler,
-                    n_sims=n_sims,
-                    stage_mode=stage_mode,
-                    is_major=True,
-                    as_of_date=as_of_val,
-                    team_stats_csv="data/team_stats.csv",
-                    use_team_stats=use_tstats_swiss,
+            if sim_engine_mode.startswith("Monte Carlo"):
+                with st.spinner(f"Rulăm {n_sims} simulări oficiale Valve Major (VRS + Buchholz)..."):
+                    sim_res, diag = simulate_swiss_stage(
+                        sim_input,
+                        model,
+                        scaler,
+                        n_sims=n_sims,
+                        stage_mode=stage_mode,
+                        is_major=True,
+                        as_of_date=as_of_val,
+                        team_stats_csv="data/team_stats.csv",
+                        use_team_stats=use_tstats_swiss,
+                        return_diagnostics=True,
+                    )
+
+                sim_view = sim_res.copy()
+                base_3_0 = sim_view['3:0 Score'] if '3:0 Score' in sim_view.columns else sim_view['3-0 (%)']
+                high_qual_penalty = np.where(
+                    sim_view['Calificare Total (%)'] > 80.0,
+                    (sim_view['Calificare Total (%)'] - 80.0) * 0.45,
+                    0.0,
+                )
+                sim_view['Pick_3_0_Rank_Score'] = base_3_0 - high_qual_penalty
+
+                df_3_0 = sim_view.sort_values('Pick_3_0_Rank_Score', ascending=False).head(2)
+                df_0_3 = sim_view.sort_values('0-3 (%)', ascending=False).head(2)
+                excluded = set(df_3_0['Echipa']).union(set(df_0_3['Echipa']))
+                df_adv = (
+                    sim_view[~sim_view['Echipa'].isin(excluded)]
+                    .sort_values('Calificare Total (%)', ascending=False)
+                    .head(6)
                 )
 
-            df_3_0 = sim_res.sort_values('3-0 (%)', ascending=False).head(2)
-            df_0_3 = sim_res.sort_values('0-3 (%)', ascending=False).head(2)
-            excluded = set(df_3_0['Echipa']).union(set(df_0_3['Echipa']))
-            df_adv = sim_res[~sim_res['Echipa'].isin(excluded)].sort_values('Calificare Total (%)', ascending=False).head(6)
+                st.markdown("#### 🎯 HLTV Visual Pick'Em Bracket (Monte Carlo)")
+                render_hltv_pickem_bracket(df_3_0, df_adv, df_0_3)
 
-            st.markdown("#### 🎯 HLTV Visual Pick'Em Bracket")
-            render_hltv_pickem_bracket(df_3_0, df_adv, df_0_3)
-
-            export_txt = (
-                f"=== NEURAL MAJOR PICK ({stage_mode}) ===\n"
-                f"3:0 -> {', '.join(df_3_0['Echipa'].tolist())}\n"
-                f"3:1 / 3:2 -> {', '.join(df_adv['Echipa'].tolist())}\n"
-                f"0:3 -> {', '.join(df_0_3['Echipa'].tolist())}"
-            )
-            st.download_button("📥 Export Pick'Em (.txt)", export_txt, file_name="major_pickem.txt")
-
-            fmt_dict = {
-                '3-0 (%)': '{:.1f}%',
-                'Calificare Total (%)': '{:.1f}%',
-                '3-1 / 3-2 (%)': '{:.1f}%',
-                '0-3 (%)': '{:.1f}%',
-            }
-            if 'Volatilitate (%)' in sim_res.columns:
-                fmt_dict['Volatilitate (%)'] = '{:.1f}%'
-
-            with st.expander("📊 Tabel Complet Probabilități (Toate cele 16 echipe)", expanded=True):
-                st.dataframe(
-                    sim_res.style.format(fmt_dict),
-                    use_container_width=True
+                export_txt = (
+                    f"=== NEURAL MAJOR PICK MC ({stage_mode}) ===\n"
+                    f"3:0 -> {', '.join(df_3_0['Echipa'].tolist())}\n"
+                    f"3:1 / 3:2 -> {', '.join(df_adv['Echipa'].tolist())}\n"
+                    f"0:3 -> {', '.join(df_0_3['Echipa'].tolist())}"
                 )
+                st.download_button("📥 Export Pick'Em (.txt)", export_txt, file_name="major_pickem_mc.txt")
+
+                fmt_dict = {
+                    '3-0 (%)': '{:.1f}%',
+                    'Calificare Total (%)': '{:.1f}%',
+                    '3-1 / 3-2 (%)': '{:.1f}%',
+                    '0-3 (%)': '{:.1f}%',
+                }
+                if '3:0 Score' in sim_res.columns:
+                    fmt_dict['3:0 Score'] = '{:.1f}'
+                if 'Volatilitate (%)' in sim_res.columns:
+                    fmt_dict['Volatilitate (%)'] = '{:.1f}%'
+
+                with st.expander("📊 Tabel Complet Probabilități (Toate cele 16 echipe)", expanded=True):
+                    st.dataframe(sim_res.style.format(fmt_dict), use_container_width=True)
+
+                with st.expander("🔍 Diagnostic Monte Carlo (Dueluri Cheie & Echipe Pivot)", expanded=True):
+                    st.caption("Aici vezi duelurile frecvente din simulări cu tensiune ridicată și echipele cu cea mai mare dispersie de rezultat.")
+                    d1, d2 = st.columns([1.3, 1])
+                    with d1:
+                        st.markdown("**Dueluri Cheie / Frecvente în Simulări**")
+                        st.dataframe(
+                            diag["key_matchups"].style.format({
+                                "Frecvență (%)": "{:.1f}%",
+                                "Prob. A (%)": "{:.1f}%",
+                                "Tensiune / Incertitudine (%)": "{:.1f}%",
+                            }),
+                            use_container_width=True,
+                            hide_index=True,
+                        )
+                    with d2:
+                        st.markdown("**Echipe Pivot (Dispersie Mare)**")
+                        st.dataframe(
+                            diag["pivot_teams"].style.format({
+                                "Calificare Total (%)": "{:.1f}%",
+                                "3-1 / 3-2 (%)": "{:.1f}%",
+                                "Volatilitate (%)": "{:.1f}%",
+                                "Dispersie Bracket": "{:.1f}",
+                            }),
+                            use_container_width=True,
+                            hide_index=True,
+                        )
+            else:
+                with st.spinner("Simulăm bracket-ul complet meci cu meci și Buchholz (R1..R5)..."):
+                    matches_df, standings_df = simulate_swiss_match_by_match(
+                        sim_input,
+                        model,
+                        scaler,
+                        stage_mode=stage_mode,
+                        is_major=True,
+                        as_of_date=as_of_val,
+                        team_stats_csv="data/team_stats.csv",
+                        use_team_stats=use_tstats_swiss,
+                        seed=int(mbm_seed),
+                        deterministic_picks=bool(mbm_det),
+                    )
+
+                adv_3_0 = standings_df[standings_df["Bilanț"] == "3-0"]["Echipa"].tolist()
+                adv_3_1_2 = standings_df[standings_df["Bilanț"].isin(["3-1", "3-2"])]["Echipa"].tolist()
+                elim_0_3 = standings_df[standings_df["Bilanț"] == "0-3"]["Echipa"].tolist()
+
+                st.markdown("#### 🧭 Rezultat Clasare Finală din Traseul Meci-cu-Meci")
+                k1, k2, k3 = st.columns(3)
+                k1.success(f"**3:0 Advance ({len(adv_3_0)}):** " + (", ".join(adv_3_0) if adv_3_0 else "-"))
+                k2.info(f"**3:1 / 3:2 Advance ({len(adv_3_1_2)}):** " + (", ".join(adv_3_1_2) if adv_3_1_2 else "-"))
+                k3.error(f"**0:3 Eliminated ({len(elim_0_3)}):** " + (", ".join(elim_0_3) if elim_0_3 else "-"))
+
+                export_mbm = (
+                    f"=== NEURAL MAJOR PICK MATCH-BY-MATCH ({stage_mode}) ===\n"
+                    f"3:0 -> {', '.join(adv_3_0)}\n"
+                    f"3:1 / 3:2 -> {', '.join(adv_3_1_2)}\n"
+                    f"0:3 -> {', '.join(elim_0_3)}"
+                )
+                st.download_button("📥 Export Clasare Meci-cu-Meci (.txt)", export_mbm, file_name="major_pickem_mbm.txt")
+
+                with st.expander("🏁 Clasament Final pe Bilanț & Buchholz", expanded=True):
+                    st.dataframe(standings_df, use_container_width=True, hide_index=True)
+
+                with st.expander("⚔️ Traseul Complet al Meciurilor (Rundă cu Rundă)", expanded=True):
+                    st.dataframe(matches_df, use_container_width=True, hide_index=True)
 
     # =========================================================
     # SUB-TAB 2: MATCH-BY-MATCH & MAP ANALYZER
@@ -281,9 +376,13 @@ def render_major_hub():
                     <div style="color:#8b949e;">Map Win Prob: {(1-res['p_map'])*100:.1f}%</div>
                 </div>""", unsafe_allow_html=True)
 
-            if res.get("volatility_level") == "High" or float(res.get("volatility_score", 0.0)) >= 60.0:
+            if (
+                res.get("volatility_level") == "High"
+                or float(res.get("volatility_score", 0.0)) >= 55.0
+                or float(res.get("upset_risk_pct", 0.0)) >= 30.0
+            ):
                 st.warning(
-                    f"⚠️ **ANUNȚ VOLATILITATE RIDICATĂ:** Meci cu risc mare de variație / surpriză "
+                    f"⚠️ **ANUNȚ VOLATILITATE / RISC SURPRIZĂ:** Meci cu variație notabilă "
                     f"(Volatility Score: **{res['volatility_score']:.1f}/100**, Upset Risk: **{res['upset_risk_pct']:.1f}%**)."
                 )
 
