@@ -1,19 +1,75 @@
 # Simulator determinist Single-Elimination (QF BO3 -> SF BO3 -> Final BO5)
 import numpy as np
 import pandas as pd
-from core.model_engine import predict_match_context
+from core.model_engine import (
+    predict_match_context,
+    predict_match_with_team_stats,
+)
 
 
-def simulate_playoffs_exact(qf_teams_df: pd.DataFrame, model, scaler, event_tier: str = "Major"):
+def _match_prob(
+    model,
+    scaler,
+    team_a: str,
+    team_b: str,
+    rank_a: int,
+    rank_b: int,
+    wr_a: float,
+    wr_b: float,
+    match_format: str,
+    event_tier: str,
+    as_of_date: str | None = None,
+    team_stats_csv: str = "data/team_stats.csv",
+    use_team_stats: bool = True,
+) -> dict:
+    if use_team_stats and team_a and team_b:
+        return predict_match_with_team_stats(
+            model=model,
+            scaler=scaler,
+            team_a=team_a,
+            team_b=team_b,
+            rank_a=int(rank_a),
+            rank_b=int(rank_b),
+            fallback_wr_a=float(wr_a),
+            fallback_wr_b=float(wr_b),
+            match_format=match_format,
+            event_tier=event_tier,
+            as_of_date=as_of_date,
+            team_stats_csv=team_stats_csv,
+        )
+    return predict_match_context(
+        model=model,
+        scaler=scaler,
+        rank_a=int(rank_a),
+        rank_b=int(rank_b),
+        wr_a=float(wr_a),
+        wr_b=float(wr_b),
+        match_format=match_format,
+        event_tier=event_tier,
+    )
+
+
+def simulate_playoffs_exact(
+    qf_teams_df: pd.DataFrame,
+    model,
+    scaler,
+    event_tier: str = "Major",
+    as_of_date: str | None = None,
+    team_stats_csv: str = "data/team_stats.csv",
+    use_team_stats: bool = True,
+):
     """
     Calculează analitic exact probabilitățile pentru un bracket Single-Elimination de 8 echipe:
-    - Rândurile 0-1: Quarter-Final 1 (BO3)
-    - Rândurile 2-3: Quarter-Final 2 (BO3)
-    - Rândurile 4-5: Quarter-Final 3 (BO3)
-    - Rândurile 6-7: Quarter-Final 4 (BO3)
-    - Semifinals: BO3 (câștigător QF1 vs QF2, câștigător QF3 vs QF4)
-    - Grand Final: BO5
+      - Rândurile 0-1: Quarter-Final 1 (BO3)
+      - Rândurile 2-3: Quarter-Final 2 (BO3)
+      - Rândurile 4-5: Quarter-Final 3 (BO3)
+      - Rândurile 6-7: Quarter-Final 4 (BO3)
+      - Semifinals: BO3 (câștigător QF1 vs QF2, câștigător QF3 vs QF4)
+      - Grand Final: BO5
     """
+    if len(qf_teams_df) != 8:
+        raise ValueError(f"Playoff bracket-ul necesită exact 8 echipe, primite: {len(qf_teams_df)}")
+
     n = 8
     teams = qf_teams_df['team'].tolist()
     ranks = qf_teams_df['rank'].tolist()
@@ -21,14 +77,26 @@ def simulate_playoffs_exact(qf_teams_df: pd.DataFrame, model, scaler, event_tier
 
     p_bo3 = np.zeros((n, n))
     p_bo5 = np.zeros((n, n))
+    vol_bo3 = np.full((n, n), 0.5)
+    vol_level_bo3 = [["Medium" for _ in range(n)] for _ in range(n)]
 
     for i in range(n):
         for j in range(n):
             if i != j:
-                res3 = predict_match_context(model, scaler, ranks[i], ranks[j], wrs[i], wrs[j], "BO3", event_tier)
-                res5 = predict_match_context(model, scaler, ranks[i], ranks[j], wrs[i], wrs[j], "BO5", event_tier)
+                res3 = _match_prob(
+                    model, scaler, teams[i], teams[j], ranks[i], ranks[j], wrs[i], wrs[j],
+                    "BO3", event_tier, as_of_date=as_of_date,
+                    team_stats_csv=team_stats_csv, use_team_stats=use_team_stats
+                )
+                res5 = _match_prob(
+                    model, scaler, teams[i], teams[j], ranks[i], ranks[j], wrs[i], wrs[j],
+                    "BO5", event_tier, as_of_date=as_of_date,
+                    team_stats_csv=team_stats_csv, use_team_stats=use_team_stats
+                )
                 p_bo3[i, j] = res3['prob_a']
                 p_bo5[i, j] = res5['prob_a']
+                vol_bo3[i, j] = res3.get('volatility', 0.5)
+                vol_level_bo3[i, j] = res3.get('volatility_level', 'Medium')
 
     # Probabilități Quarter-Finals (4 meciuri BO3)
     qf_pairs = [(0, 1), (2, 3), (4, 5), (6, 7)]
@@ -44,7 +112,9 @@ def simulate_playoffs_exact(qf_teams_df: pd.DataFrame, model, scaler, event_tier
             'match': f"QF{m_idx + 1}",
             'team_a': teams[a], 'prob_a': pa,
             'team_b': teams[b], 'prob_b': pb,
-            'pick': teams[a] if pa >= pb else teams[b]
+            'pick': teams[a] if pa >= pb else teams[b],
+            'volatility': vol_bo3[a, b],
+            'volatility_level': vol_level_bo3[a, b],
         })
 
     # Probabilități Semi-Finals (BO3)

@@ -105,364 +105,218 @@ date,event_name,event_tier,stage,format,team_a,team_b,rank_a,rank_b,winrate_3m_a
 2026-06-20,IEM Cologne Major 2026,Major,Playoffs,BO3,FURIA,Aurora,5,7,0.5094,0.5574,1
 2026-06-20,IEM Cologne Major 2026,Major,Playoffs,BO3,Spirit,Falcons,3,4,0.7021,0.6296,0
 2026-06-21,IEM Cologne Major 2026,Major,Playoffs,BO5,FURIA,Falcons,5,4,0.5094,0.6296,0
-2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,Imperial,Rare Atom,46,48,0.6250,0.5652,1
-2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,B8,M80,21,26,0.4800,0.6042,0
-2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,Legacy,FlyQuest,14,32,0.5000,0.4138,0
-2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,PARIVISION,The Huns,35,79,0.7551,0.6923,1
-2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,Ninjas in Pyjamas,NRG,30,38,0.5000,0.7333,0
-2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,GamerLegion,Fluxo,17,39,0.4746,0.5556,0
-2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,FaZe,Lynn Vision,13,22,0.4717,0.4800,1
-2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,fnatic,RED Canids,27,64,0.6000,0.5469,1
-2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,Rare Atom,Legacy,45,14,0.5652,0.5000,0
-2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,Imperial,FlyQuest,42,31,0.6250,0.4138,0
-2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,B8,The Huns,23,68,0.4800,0.6923,1
-2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,RED Canids,GamerLegion,71,17,0.5469,0.4746,1
-2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,M80,PARIVISION,24,38,0.6042,0.7551,1
-2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,Ninjas in Pyjamas,Lynn Vision,32,22,0.5000,0.4800,1
-2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,fnatic,Fluxo,26,37,0.6000,0.5556,0
-2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,FaZe,NRG,13,35,0.4717,0.7333,0
-2025-11-25,StarLadder Budapest Major 2025,Major,Stage 1,BO1,RED Canids,Legacy,71,14,0.5469,0.5000,0
-2025-11-25,StarLadder Budapest Major 2025,Major,Stage 1,BO1,B8,PARIVISION,23,38,0.4800,0.7551,1
-2025-11-25,StarLadder Budapest Major 2025,Major,Stage 1,BO1,fnatic,Imperial,26,42,0.6000,0.6250,1
-2025-11-25,StarLadder Budapest Major 2025,Major,Stage 1,BO1,Ninjas in Pyjamas,FaZe,32,13,0.5000,0.4717,1
-2025-11-25,StarLadder Budapest Major 2025,Major,Stage 1,BO3,Fluxo,FlyQuest,37,31,0.5556,0.4138,0
-2025-11-25,StarLadder Budapest Major 2025,Major,Stage 1,BO3,GamerLegion,Rare Atom,17,45,0.4746,0.5652,1
-2025-11-25,StarLadder Budapest Major 2025,Major,Stage 1,BO3,NRG,M80,35,24,0.7333,0.6042,0
-2025-11-25,StarLadder Budapest Major 2025,Major,Stage 1,BO3,Lynn Vision,The Huns,22,68,0.4800,0.6923,0
-2025-11-26,StarLadder Budapest Major 2025,Major,Stage 1,BO3,Ninjas in Pyjamas,Fluxo,32,37,0.5000,0.5556,1
-2025-11-26,StarLadder Budapest Major 2025,Major,Stage 1,BO3,B8,Legacy,23,14,0.4800,0.5000,1
-2025-11-26,StarLadder Budapest Major 2025,Major,Stage 1,BO3,fnatic,NRG,26,35,0.6000,0.7333,1
-2025-11-26,StarLadder Budapest Major 2025,Major,Stage 1,BO3,FaZe,RED Canids,13,71,0.4717,0.5469,1
-2025-11-26,StarLadder Budapest Major 2025,Major,Stage 1,BO3,Imperial,The Huns,42,68,0.6250,0.6923,1
-2025-11-26,StarLadder Budapest Major 2025,Major,Stage 1,BO3,GamerLegion,PARIVISION,17,38,0.4746,0.7551,0
-2025-11-27,StarLadder Budapest Major 2025,Major,Stage 1,BO3,FaZe,Fluxo,13,37,0.4717,0.5556,1
-2025-11-27,StarLadder Budapest Major 2025,Major,Stage 1,BO3,NRG,Imperial,35,42,0.7333,0.6250,0
-2025-11-27,StarLadder Budapest Major 2025,Major,Stage 1,BO3,PARIVISION,Legacy,38,14,0.7551,0.5000,1
-2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Ninjas in Pyjamas,Astralis,32,11,0.5000,0.4545,1
-2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,3DMAX,fnatic,12,26,0.5325,0.6000,0
-2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,TYLOO,PARIVISION,25,38,0.3514,0.7551,1
-2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,FaZe,Passion UA,13,21,0.4717,0.4912,1
-2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Aurora,M80,8,24,0.5246,0.6042,1
-2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Natus Vincere,FlyQuest,9,31,0.5800,0.4138,1
-2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Liquid,B8,15,23,0.5763,0.4800,0
-2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,MIBR,Imperial,34,42,0.6364,0.6250,0
-2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Ninjas in Pyjamas,TYLOO,32,25,0.5000,0.3514,1
-2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,3DMAX,FlyQuest,12,31,0.5325,0.4138,1
-2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Natus Vincere,Imperial,9,42,0.5800,0.6250,1
-2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Astralis,M80,11,24,0.4545,0.6042,0
-2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,MIBR,Passion UA,34,21,0.6364,0.4912,0
-2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,FaZe,Aurora,13,8,0.4717,0.5246,1
-2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Liquid,PARIVISION,15,38,0.5763,0.7551,0
-2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,fnatic,B8,26,23,0.6000,0.4800,0
-2025-11-30,StarLadder Budapest Major 2025,Major,Stage 2,BO1,3DMAX,Passion UA,12,21,0.5325,0.4912,1
-2025-11-30,StarLadder Budapest Major 2025,Major,Stage 2,BO1,TYLOO,M80,25,24,0.3514,0.6042,0
-2025-11-30,StarLadder Budapest Major 2025,Major,Stage 2,BO1,fnatic,Imperial,26,42,0.6000,0.6250,0
-2025-11-30,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Aurora,PARIVISION,8,38,0.5246,0.7551,0
-2025-11-30,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Astralis,FlyQuest,11,31,0.4545,0.4138,1
-2025-11-30,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Ninjas in Pyjamas,FaZe,32,13,0.5000,0.4717,0
-2025-11-30,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Liquid,MIBR,15,34,0.5763,0.6364,1
-2025-11-30,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Natus Vincere,B8,9,23,0.5800,0.4800,1
-2025-12-01,StarLadder Budapest Major 2025,Major,Stage 2,BO3,fnatic,Passion UA,26,21,0.6000,0.4912,0
-2025-12-01,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Ninjas in Pyjamas,PARIVISION,32,38,0.5000,0.7551,0
-2025-12-01,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Astralis,Aurora,11,8,0.4545,0.5246,1
-2025-12-01,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Imperial,M80,42,24,0.6250,0.6042,1
-2025-12-01,StarLadder Budapest Major 2025,Major,Stage 2,BO3,TYLOO,Liquid,28,15,0.3514,0.5763,0
+2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,Imperial,Rare Atom,34,52,0.6250,0.5652,1
+2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,B8,M80,18,31,0.4800,0.6042,0
+2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,Legacy,FlyQuest,7,44,0.5000,0.4138,0
+2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,PARIVISION,The Huns,24,61,0.7551,0.6923,1
+2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,Ninjas in Pyjamas,NRG,41,33,0.5000,0.7333,0
+2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,GamerLegion,Fluxo,19,42,0.4746,0.5556,0
+2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,FaZe,Lynn Vision,16,25,0.4717,0.4800,1
+2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,fnatic,RED Canids,23,71,0.6000,0.5469,1
+2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,Rare Atom,Legacy,52,7,0.5652,0.5000,0
+2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,Imperial,FlyQuest,34,44,0.6250,0.4138,0
+2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,B8,The Huns,18,61,0.4800,0.6923,1
+2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,RED Canids,GamerLegion,71,19,0.5469,0.4746,1
+2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,M80,PARIVISION,31,24,0.6042,0.7551,1
+2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,Ninjas in Pyjamas,Lynn Vision,41,25,0.5000,0.4800,1
+2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,fnatic,Fluxo,23,42,0.6000,0.5556,0
+2025-11-24,StarLadder Budapest Major 2025,Major,Stage 1,BO1,FaZe,NRG,16,33,0.4717,0.7333,0
+2025-11-25,StarLadder Budapest Major 2025,Major,Stage 1,BO1,RED Canids,Legacy,71,7,0.5469,0.5000,0
+2025-11-25,StarLadder Budapest Major 2025,Major,Stage 1,BO1,B8,PARIVISION,18,24,0.4800,0.7551,1
+2025-11-25,StarLadder Budapest Major 2025,Major,Stage 1,BO1,fnatic,Imperial,23,34,0.6000,0.6250,1
+2025-11-25,StarLadder Budapest Major 2025,Major,Stage 1,BO1,Ninjas in Pyjamas,FaZe,41,16,0.5000,0.4717,1
+2025-11-25,StarLadder Budapest Major 2025,Major,Stage 1,BO3,Fluxo,FlyQuest,42,44,0.5556,0.4138,0
+2025-11-25,StarLadder Budapest Major 2025,Major,Stage 1,BO3,GamerLegion,Rare Atom,19,52,0.4746,0.5652,1
+2025-11-25,StarLadder Budapest Major 2025,Major,Stage 1,BO3,NRG,M80,33,31,0.7333,0.6042,0
+2025-11-25,StarLadder Budapest Major 2025,Major,Stage 1,BO3,Lynn Vision,The Huns,25,61,0.4800,0.6923,0
+2025-11-26,StarLadder Budapest Major 2025,Major,Stage 1,BO3,Ninjas in Pyjamas,Fluxo,41,42,0.5000,0.5556,1
+2025-11-26,StarLadder Budapest Major 2025,Major,Stage 1,BO3,B8,Legacy,18,7,0.4800,0.5000,1
+2025-11-26,StarLadder Budapest Major 2025,Major,Stage 1,BO3,fnatic,NRG,23,33,0.6000,0.7333,1
+2025-11-26,StarLadder Budapest Major 2025,Major,Stage 1,BO3,FaZe,RED Canids,16,71,0.4717,0.5469,1
+2025-11-26,StarLadder Budapest Major 2025,Major,Stage 1,BO3,Imperial,The Huns,34,61,0.6250,0.6923,1
+2025-11-26,StarLadder Budapest Major 2025,Major,Stage 1,BO3,GamerLegion,PARIVISION,19,24,0.4746,0.7551,0
+2025-11-27,StarLadder Budapest Major 2025,Major,Stage 1,BO3,FaZe,Fluxo,16,42,0.4717,0.5556,1
+2025-11-27,StarLadder Budapest Major 2025,Major,Stage 1,BO3,NRG,Imperial,33,34,0.7333,0.6250,0
+2025-11-27,StarLadder Budapest Major 2025,Major,Stage 1,BO3,PARIVISION,Legacy,24,7,0.7551,0.5000,1
+2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Ninjas in Pyjamas,Astralis,28,12,0.5000,0.4545,1
+2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,3DMAX,fnatic,13,24,0.5325,0.6000,0
+2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,TYLOO,PARIVISION,36,19,0.3514,0.7551,1
+2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,FaZe,Passion UA,17,27,0.4717,0.4912,1
+2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Aurora,M80,4,25,0.5246,0.6042,1
+2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Natus Vincere,FlyQuest,10,26,0.5800,0.4138,1
+2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Liquid,B8,8,16,0.5763,0.4800,0
+2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,MIBR,Imperial,35,33,0.6364,0.6250,0
+2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Ninjas in Pyjamas,TYLOO,28,36,0.5000,0.3514,1
+2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,3DMAX,FlyQuest,13,26,0.5325,0.4138,1
+2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Natus Vincere,Imperial,10,33,0.5800,0.6250,1
+2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Astralis,M80,12,25,0.4545,0.6042,0
+2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,MIBR,Passion UA,35,27,0.6364,0.4912,0
+2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,FaZe,Aurora,17,4,0.4717,0.5246,1
+2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Liquid,PARIVISION,8,19,0.5763,0.7551,0
+2025-11-29,StarLadder Budapest Major 2025,Major,Stage 2,BO1,fnatic,B8,24,16,0.6000,0.4800,0
+2025-11-30,StarLadder Budapest Major 2025,Major,Stage 2,BO1,3DMAX,Passion UA,13,27,0.5325,0.4912,1
+2025-11-30,StarLadder Budapest Major 2025,Major,Stage 2,BO1,TYLOO,M80,36,25,0.3514,0.6042,0
+2025-11-30,StarLadder Budapest Major 2025,Major,Stage 2,BO1,fnatic,Imperial,24,33,0.6000,0.6250,0
+2025-11-30,StarLadder Budapest Major 2025,Major,Stage 2,BO1,Aurora,PARIVISION,4,19,0.5246,0.7551,0
+2025-11-30,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Astralis,FlyQuest,12,26,0.4545,0.4138,1
+2025-11-30,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Ninjas in Pyjamas,FaZe,28,17,0.5000,0.4717,0
+2025-11-30,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Liquid,MIBR,8,35,0.5763,0.6364,1
+2025-11-30,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Natus Vincere,B8,10,16,0.5800,0.4800,1
+2025-12-01,StarLadder Budapest Major 2025,Major,Stage 2,BO3,fnatic,Passion UA,24,27,0.6000,0.4912,0
+2025-12-01,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Ninjas in Pyjamas,PARIVISION,28,19,0.5000,0.7551,0
+2025-12-01,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Astralis,Aurora,12,4,0.4545,0.5246,1
+2025-12-01,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Imperial,M80,33,25,0.6250,0.6042,1
+2025-12-01,StarLadder Budapest Major 2025,Major,Stage 2,BO3,TYLOO,Liquid,36,8,0.3514,0.5763,0
 2025-12-01,StarLadder Budapest Major 2025,Major,Stage 2,BO3,3DMAX,B8,13,16,0.5325,0.4800,0
-2025-12-02,StarLadder Budapest Major 2025,Major,Stage 2,BO3,M80,Passion UA,22,21,0.6042,0.4912,0
-2025-12-02,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Liquid,Astralis,15,11,0.5763,0.4545,1
-2025-12-02,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Ninjas in Pyjamas,3DMAX,26,13,0.5000,0.5325,0
-2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,MOUZ,PARIVISION,4,25,0.5952,0.7551,1
-2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,The MongolZ,Imperial,5,34,0.5224,0.6250,0
-2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,G2,Passion UA,8,21,0.5667,0.4912,1
-2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,Liquid,Spirit,15,6,0.5763,0.5429,0
-2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,paiN,3DMAX,10,13,0.4894,0.5325,1
-2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,FaZe,Vitality,12,2,0.4717,0.6061,1
+2025-12-02,StarLadder Budapest Major 2025,Major,Stage 2,BO3,M80,Passion UA,25,27,0.6042,0.4912,0
+2025-12-02,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Liquid,Astralis,8,12,0.5763,0.4545,1
+2025-12-02,StarLadder Budapest Major 2025,Major,Stage 2,BO3,Ninjas in Pyjamas,3DMAX,28,13,0.5000,0.5325,0
+2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,MOUZ,PARIVISION,4,17,0.5952,0.7551,1
+2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,The MongolZ,Imperial,5,29,0.5224,0.6250,0
+2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,G2,Passion UA,11,25,0.5667,0.4912,1
+2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,Liquid,Spirit,10,8,0.5763,0.5429,0
+2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,paiN,3DMAX,18,16,0.4894,0.5325,1
+2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,FaZe,Vitality,14,3,0.4717,0.6061,1
 2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,Natus Vincere,FURIA,7,1,0.5800,0.7126,0
-2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,B8,Falcons,16,3,0.4800,0.7143,1
-2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,paiN,G2,10,8,0.4894,0.5667,0
-2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,3DMAX,Vitality,13,2,0.5325,0.6061,0
-2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,Falcons,Passion UA,3,21,0.7143,0.4912,1
-2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,FaZe,Spirit,12,6,0.4717,0.5429,0
-2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,MOUZ,B8,4,16,0.5952,0.4800,1
-2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,Liquid,The MongolZ,15,5,0.5763,0.5224,0
-2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,Natus Vincere,PARIVISION,7,25,0.5800,0.7551,1
-2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,FURIA,Imperial,1,34,0.7126,0.6250,1
-2025-12-05,StarLadder Budapest Major 2025,Major,Stage 3,BO1,Vitality,B8,2,16,0.6061,0.4800,1
-2025-12-05,StarLadder Budapest Major 2025,Major,Stage 3,BO1,The MongolZ,FaZe,5,12,0.5224,0.4717,1
-2025-12-05,StarLadder Budapest Major 2025,Major,Stage 3,BO1,Imperial,Falcons,34,3,0.6250,0.7143,0
-2025-12-05,StarLadder Budapest Major 2025,Major,Stage 3,BO1,Natus Vincere,paiN,7,10,0.5800,0.4894,1
-2025-12-05,StarLadder Budapest Major 2025,Major,Stage 3,BO3,Liquid,Passion UA,15,21,0.5763,0.4912,0
-2025-12-05,StarLadder Budapest Major 2025,Major,Stage 3,BO3,MOUZ,Spirit,4,6,0.5952,0.5429,0
-2025-12-05,StarLadder Budapest Major 2025,Major,Stage 3,BO3,3DMAX,PARIVISION,13,25,0.5325,0.7551,1
-2025-12-05,StarLadder Budapest Major 2025,Major,Stage 3,BO3,G2,FURIA,8,1,0.5667,0.7126,0
-2025-12-06,StarLadder Budapest Major 2025,Major,Stage 3,BO3,Natus Vincere,Vitality,7,2,0.5800,0.6061,0
-2025-12-06,StarLadder Budapest Major 2025,Major,Stage 3,BO3,paiN,B8,10,16,0.4894,0.4800,0
-2025-12-06,StarLadder Budapest Major 2025,Major,Stage 3,BO3,Imperial,Passion UA,34,21,0.6250,0.4912,0
-2025-12-06,StarLadder Budapest Major 2025,Major,Stage 3,BO3,MOUZ,Falcons,4,3,0.5952,0.7143,1
-2025-12-06,StarLadder Budapest Major 2025,Major,Stage 3,BO3,3DMAX,FaZe,13,12,0.5325,0.4717,0
-2025-12-06,StarLadder Budapest Major 2025,Major,Stage 3,BO3,G2,The MongolZ,8,5,0.5667,0.5224,0
-2025-12-07,StarLadder Budapest Major 2025,Major,Stage 3,BO3,Natus Vincere,B8,7,16,0.5800,0.4800,1
-2025-12-07,StarLadder Budapest Major 2025,Major,Stage 3,BO3,FaZe,Passion UA,12,21,0.4717,0.4912,1
-2025-12-07,StarLadder Budapest Major 2025,Major,Stage 3,BO3,G2,Falcons,8,3,0.5667,0.7143,0
-2025-12-11,StarLadder Budapest Major 2025,Major,Playoffs,BO3,Spirit,Falcons,6,3,0.5429,0.7143,1
-2025-12-11,StarLadder Budapest Major 2025,Major,Playoffs,BO3,The MongolZ,Vitality,5,2,0.5224,0.6061,0
-2025-12-12,StarLadder Budapest Major 2025,Major,Playoffs,BO3,MOUZ,FaZe,4,12,0.5952,0.4717,0
+2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,B8,Falcons,12,2,0.4800,0.7143,1
+2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,paiN,G2,18,11,0.4894,0.5667,0
+2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,3DMAX,Vitality,16,3,0.5325,0.6061,0
+2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,Falcons,Passion UA,2,25,0.7143,0.4912,1
+2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,FaZe,Spirit,14,8,0.4717,0.5429,0
+2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,MOUZ,B8,4,12,0.5952,0.4800,1
+2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,Liquid,The MongolZ,10,5,0.5763,0.5224,0
+2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,Natus Vincere,PARIVISION,7,17,0.5800,0.7551,1
+2025-12-04,StarLadder Budapest Major 2025,Major,Stage 3,BO1,FURIA,Imperial,1,29,0.7126,0.6250,1
+2025-12-05,StarLadder Budapest Major 2025,Major,Stage 3,BO1,Vitality,B8,3,12,0.6061,0.4800,1
+2025-12-05,StarLadder Budapest Major 2025,Major,Stage 3,BO1,The MongolZ,FaZe,5,14,0.5224,0.4717,1
+2025-12-05,StarLadder Budapest Major 2025,Major,Stage 3,BO1,Imperial,Falcons,29,2,0.6250,0.7143,0
+2025-12-05,StarLadder Budapest Major 2025,Major,Stage 3,BO1,Natus Vincere,paiN,7,18,0.5800,0.4894,1
+2025-12-05,StarLadder Budapest Major 2025,Major,Stage 3,BO3,Liquid,Passion UA,10,25,0.5763,0.4912,0
+2025-12-05,StarLadder Budapest Major 2025,Major,Stage 3,BO3,MOUZ,Spirit,4,8,0.5952,0.5429,0
+2025-12-05,StarLadder Budapest Major 2025,Major,Stage 3,BO3,3DMAX,PARIVISION,16,17,0.5325,0.7551,1
+2025-12-05,StarLadder Budapest Major 2025,Major,Stage 3,BO3,G2,FURIA,11,1,0.5667,0.7126,0
+2025-12-06,StarLadder Budapest Major 2025,Major,Stage 3,BO3,Natus Vincere,Vitality,7,3,0.5800,0.6061,0
+2025-12-06,StarLadder Budapest Major 2025,Major,Stage 3,BO3,paiN,B8,18,12,0.4894,0.4800,0
+2025-12-06,StarLadder Budapest Major 2025,Major,Stage 3,BO3,Imperial,Passion UA,29,25,0.6250,0.4912,0
+2025-12-06,StarLadder Budapest Major 2025,Major,Stage 3,BO3,MOUZ,Falcons,4,2,0.5952,0.7143,1
+2025-12-06,StarLadder Budapest Major 2025,Major,Stage 3,BO3,3DMAX,FaZe,16,14,0.5325,0.4717,0
+2025-12-06,StarLadder Budapest Major 2025,Major,Stage 3,BO3,G2,The MongolZ,11,5,0.5667,0.5224,0
+2025-12-07,StarLadder Budapest Major 2025,Major,Stage 3,BO3,Natus Vincere,B8,7,12,0.5800,0.4800,1
+2025-12-07,StarLadder Budapest Major 2025,Major,Stage 3,BO3,FaZe,Passion UA,14,25,0.4717,0.4912,1
+2025-12-07,StarLadder Budapest Major 2025,Major,Stage 3,BO3,G2,Falcons,11,2,0.5667,0.7143,0
+2025-12-11,StarLadder Budapest Major 2025,Major,Playoffs,BO3,Spirit,Falcons,8,2,0.5429,0.7143,1
+2025-12-11,StarLadder Budapest Major 2025,Major,Playoffs,BO3,The MongolZ,Vitality,5,3,0.5224,0.6061,0
+2025-12-12,StarLadder Budapest Major 2025,Major,Playoffs,BO3,MOUZ,FaZe,4,14,0.5952,0.4717,0
 2025-12-12,StarLadder Budapest Major 2025,Major,Playoffs,BO3,Natus Vincere,FURIA,7,1,0.5800,0.7126,1
-2025-12-13,StarLadder Budapest Major 2025,Major,Playoffs,BO3,Spirit,Vitality,6,2,0.5429,0.6061,0
-2025-12-13,StarLadder Budapest Major 2025,Major,Playoffs,BO3,Natus Vincere,FaZe,7,12,0.5800,0.4717,0
-2025-12-14,StarLadder Budapest Major 2025,Major,Playoffs,BO5,FaZe,Vitality,12,2,0.4717,0.6061,0
-2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Complexity,OG,17,42,0.7292,0.6163,0
-2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,HEROIC,Chinggis Warriors,15,37,0.6552,0.5823,1
-2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Nemiga,BETBOOM,49,33,0.5571,0.5854,0
-2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Imperial,B8,39,23,0.6444,0.6286,0
-2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,TYLOO,NRG,25,34,0.6389,0.6579,0
-2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Lynn Vision,Legacy,30,31,0.7083,0.6622,1
-2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Metizport,Wildcard,55,24,0.5263,0.6136,0
-2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Fluxo,FlyQuest,45,22,0.7313,0.4722,0
-2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,NRG,HEROIC,34,15,0.6579,0.6552,0
-2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,OG,B8,42,23,0.6163,0.6286,0
-2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,BETBOOM,FlyQuest,33,22,0.5854,0.4722,0
-2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Lynn Vision,Wildcard,30,24,0.7083,0.6136,0
-2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Complexity,Fluxo,17,45,0.7292,0.7313,1
-2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Legacy,Chinggis Warriors,31,37,0.6622,0.5823,1
-2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Nemiga,Imperial,49,39,0.5571,0.6444,1
-2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,TYLOO,Metizport,25,55,0.6389,0.5263,1
-2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,BETBOOM,Legacy,33,31,0.5854,0.6622,1
-2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Complexity,NRG,17,34,0.7292,0.6579,0
-2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,TYLOO,OG,25,42,0.6389,0.6163,0
-2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Nemiga,Lynn Vision,49,30,0.5571,0.7083,1
-2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,HEROIC,FlyQuest,15,22,0.6552,0.4722,1
-2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,B8,Wildcard,23,24,0.6286,0.6136,1
-2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,Imperial,Metizport,39,55,0.6444,0.5263,1
-2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,Fluxo,Chinggis Warriors,45,37,0.7313,0.5823,0
-2025-06-05,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,TYLOO,Complexity,25,17,0.6389,0.7292,1
-2025-06-05,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,Imperial,Legacy,39,31,0.6444,0.6622,0
-2025-06-05,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,NRG,OG,34,42,0.6579,0.6163,0
-2025-06-05,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,Lynn Vision,Chinggis Warriors,30,37,0.7083,0.5823,1
-2025-06-05,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,Wildcard,BETBOOM,24,33,0.6136,0.5854,0
-2025-06-05,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,Nemiga,FlyQuest,49,22,0.5571,0.4722,1
-2025-06-06,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,NRG,Lynn Vision,34,30,0.6579,0.7083,0
-2025-06-06,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,Wildcard,Legacy,24,31,0.6136,0.6622,0
-2025-06-06,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,TYLOO,FlyQuest,25,22,0.6389,0.4722,1
-2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,FaZe,HEROIC,10,15,0.5217,0.6552,1
-2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,B8,Falcons,23,4,0.6286,0.5663,1
-2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,Virtus.pro,OG,13,42,0.4390,0.6163,1
-2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,3DMAX,BETBOOM,14,33,0.5000,0.5854,1
-2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,FURIA,Lynn Vision,16,30,0.4407,0.7083,1
-2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,paiN,Nemiga,20,49,0.2791,0.5571,1
-2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,MIBR,Legacy,18,31,0.4571,0.6622,0
-2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,TYLOO,M80,25,26,0.6389,0.5000,1
-2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,Virtus.pro,B8,13,23,0.4390,0.6286,1
-2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,paiN,FURIA,20,16,0.2791,0.4407,1
-2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,3DMAX,Legacy,14,31,0.5000,0.6622,0
-2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,TYLOO,FaZe,25,10,0.6389,0.5217,0
-2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,HEROIC,BETBOOM,15,33,0.6552,0.5854,1
-2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,Lynn Vision,Falcons,30,4,0.7083,0.5663,1
-2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,OG,M80,42,26,0.6163,0.5000,0
-2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,Nemiga,MIBR,49,18,0.5571,0.4571,1
-2025-06-08,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,TYLOO,Lynn Vision,25,30,0.6389,0.7083,0
-2025-06-08,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,3DMAX,Nemiga,14,49,0.5000,0.5571,1
-2025-06-08,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,FURIA,M80,16,26,0.4407,0.5000,1
-2025-06-08,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,HEROIC,B8,15,23,0.6552,0.6286,0
-2025-06-08,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,FaZe,Legacy,10,31,0.5217,0.6622,0
-2025-06-08,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,paiN,Virtus.pro,20,13,0.2791,0.4390,0
-2025-06-08,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,MIBR,BETBOOM,18,33,0.4571,0.5854,1
-2025-06-08,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,OG,Falcons,42,4,0.6163,0.5663,0
-2025-06-09,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,Nemiga,M80,49,26,0.5571,0.5000,1
-2025-06-09,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,TYLOO,HEROIC,25,15,0.6389,0.6552,0
-2025-06-09,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,paiN,Lynn Vision,20,30,0.2791,0.7083,1
-2025-06-09,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,FURIA,B8,15,18,0.4407,0.6286,1
-2025-06-09,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,MIBR,Falcons,17,4,0.4571,0.5663,1
-2025-06-09,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,3DMAX,FaZe,16,11,0.5000,0.5217,1
-2025-06-10,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,HEROIC,Nemiga,12,29,0.6552,0.5571,0
-2025-06-10,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,Lynn Vision,B8,24,18,0.7083,0.6286,1
-2025-06-10,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,FaZe,MIBR,11,17,0.5217,0.4571,1
-2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,Vitality,Legacy,1,21,0.8209,0.6622,0
-2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,MOUZ,Virtus.pro,2,13,0.6094,0.4390,0
+2025-12-13,StarLadder Budapest Major 2025,Major,Playoffs,BO3,Spirit,Vitality,8,3,0.5429,0.6061,0
+2025-12-13,StarLadder Budapest Major 2025,Major,Playoffs,BO3,Natus Vincere,FaZe,7,14,0.5800,0.4717,0
+2025-12-14,StarLadder Budapest Major 2025,Major,Playoffs,BO5,FaZe,Vitality,14,3,0.4717,0.6061,0
+2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Complexity,OG,17,38,0.7292,0.6163,0
+2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,HEROIC,Chinggis Warriors,13,40,0.6552,0.5823,1
+2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Nemiga,BETBOOM,46,35,0.5571,0.5854,0
+2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Imperial,B8,42,20,0.6444,0.6286,0
+2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,TYLOO,NRG,18,32,0.6389,0.6579,0
+2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Lynn Vision,Legacy,25,49,0.7083,0.6622,1
+2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Metizport,Wildcard,60,48,0.5263,0.6136,0
+2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Fluxo,FlyQuest,56,24,0.7313,0.4722,0
+2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,NRG,HEROIC,32,13,0.6579,0.6552,0
+2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,OG,B8,38,20,0.6163,0.6286,0
+2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,BETBOOM,FlyQuest,35,24,0.5854,0.4722,0
+2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Lynn Vision,Wildcard,25,48,0.7083,0.6136,0
+2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Complexity,Fluxo,17,56,0.7292,0.7313,1
+2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Legacy,Chinggis Warriors,49,40,0.6622,0.5823,1
+2025-06-03,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Nemiga,Imperial,46,42,0.5571,0.6444,1
+2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,TYLOO,Metizport,18,60,0.6389,0.5263,1
+2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,BETBOOM,Legacy,35,49,0.5854,0.6622,1
+2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Complexity,NRG,17,32,0.7292,0.6579,0
+2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,TYLOO,OG,18,38,0.6389,0.6163,0
+2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO1,Nemiga,Lynn Vision,46,25,0.5571,0.7083,1
+2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,HEROIC,FlyQuest,13,24,0.6552,0.4722,1
+2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,B8,Wildcard,20,48,0.6286,0.6136,1
+2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,Imperial,Metizport,42,60,0.6444,0.5263,1
+2025-06-04,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,Fluxo,Chinggis Warriors,56,40,0.7313,0.5823,0
+2025-06-05,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,TYLOO,Complexity,18,17,0.6389,0.7292,1
+2025-06-05,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,Imperial,Legacy,42,49,0.6444,0.6622,0
+2025-06-05,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,NRG,OG,32,38,0.6579,0.6163,0
+2025-06-05,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,Lynn Vision,Chinggis Warriors,25,40,0.7083,0.5823,1
+2025-06-05,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,Wildcard,BETBOOM,48,35,0.6136,0.5854,0
+2025-06-05,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,Nemiga,FlyQuest,46,24,0.5571,0.4722,1
+2025-06-06,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,NRG,Lynn Vision,32,25,0.6579,0.7083,0
+2025-06-06,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,Wildcard,Legacy,48,49,0.6136,0.6622,0
+2025-06-06,BLAST.tv Austin Major 2025,Major,Stage 1,BO3,TYLOO,FlyQuest,18,24,0.6389,0.4722,1
+2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,FaZe,HEROIC,11,7,0.5217,0.6552,1
+2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,B8,Falcons,19,4,0.6286,0.5663,1
+2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,Virtus.pro,OG,16,28,0.4390,0.6163,1
+2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,3DMAX,BETBOOM,13,30,0.5000,0.5854,1
+2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,FURIA,Lynn Vision,15,21,0.4407,0.7083,1
+2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,paiN,Nemiga,25,34,0.2791,0.5571,1
+2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,MIBR,Legacy,20,39,0.4571,0.6622,0
+2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,TYLOO,M80,17,51,0.6389,0.5000,1
+2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,Virtus.pro,B8,16,19,0.4390,0.6286,1
+2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,paiN,FURIA,25,15,0.2791,0.4407,1
+2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,3DMAX,Legacy,13,39,0.5000,0.6622,0
+2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,TYLOO,FaZe,17,11,0.6389,0.5217,0
+2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,HEROIC,BETBOOM,7,30,0.6552,0.5854,1
+2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,Lynn Vision,Falcons,21,4,0.7083,0.5663,1
+2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,OG,M80,28,51,0.6163,0.5000,0
+2025-06-07,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,Nemiga,MIBR,34,20,0.5571,0.4571,1
+2025-06-08,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,TYLOO,Lynn Vision,17,21,0.6389,0.7083,0
+2025-06-08,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,3DMAX,Nemiga,13,34,0.5000,0.5571,1
+2025-06-08,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,FURIA,M80,15,51,0.4407,0.5000,1
+2025-06-08,BLAST.tv Austin Major 2025,Major,Stage 2,BO1,HEROIC,B8,7,19,0.6552,0.6286,0
+2025-06-08,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,FaZe,Legacy,11,39,0.5217,0.6622,0
+2025-06-08,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,paiN,Virtus.pro,25,16,0.2791,0.4390,0
+2025-06-08,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,MIBR,BETBOOM,20,30,0.4571,0.5854,1
+2025-06-08,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,OG,Falcons,28,4,0.6163,0.5663,0
+2025-06-09,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,Nemiga,M80,34,51,0.5571,0.5000,1
+2025-06-09,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,TYLOO,HEROIC,17,7,0.6389,0.6552,0
+2025-06-09,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,paiN,Lynn Vision,25,21,0.2791,0.7083,1
+2025-06-09,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,FURIA,B8,15,19,0.4407,0.6286,1
+2025-06-09,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,MIBR,Falcons,20,4,0.4571,0.5663,1
+2025-06-09,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,3DMAX,FaZe,13,11,0.5000,0.5217,1
+2025-06-10,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,HEROIC,Nemiga,7,34,0.6552,0.5571,0
+2025-06-10,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,Lynn Vision,B8,21,19,0.7083,0.6286,1
+2025-06-10,BLAST.tv Austin Major 2025,Major,Stage 2,BO3,FaZe,MIBR,11,20,0.5217,0.4571,1
+2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,Vitality,Legacy,1,26,0.8209,0.6622,0
+2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,MOUZ,Virtus.pro,2,15,0.6094,0.4390,0
 2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,paiN,Spirit,22,3,0.2791,0.7400,0
-2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,3DMAX,G2,16,8,0.5000,0.5738,1
+2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,3DMAX,G2,12,7,0.5000,0.5738,1
 2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,FaZe,Aurora,11,6,0.5217,0.5702,0
-2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,The MongolZ,FURIA,5,15,0.5797,0.4407,0
-2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,Natus Vincere,Nemiga,7,29,0.5455,0.5571,1
-2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,Liquid,Lynn Vision,10,24,0.3913,0.7083,0
-2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,FURIA,Aurora,15,6,0.4407,0.5702,1
-2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,Virtus.pro,Legacy,13,21,0.4390,0.6622,1
-2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,Spirit,Lynn Vision,3,24,0.7400,0.7083,1
-2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,Natus Vincere,3DMAX,7,16,0.5455,0.5000,1
+2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,The MongolZ,FURIA,5,16,0.5797,0.4407,0
+2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,Natus Vincere,Nemiga,9,27,0.5455,0.5571,1
+2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,Liquid,Lynn Vision,14,21,0.3913,0.7083,0
+2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,FURIA,Aurora,16,6,0.4407,0.5702,1
+2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,Virtus.pro,Legacy,15,26,0.4390,0.6622,1
+2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,Spirit,Lynn Vision,3,21,0.7400,0.7083,1
+2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,Natus Vincere,3DMAX,9,12,0.5455,0.5000,1
 2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,MOUZ,FaZe,2,11,0.6094,0.5217,0
-2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,Nemiga,Vitality,29,1,0.5571,0.8209,0
-2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,Liquid,The MongolZ,10,5,0.3913,0.5797,0
-2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,paiN,G2,22,8,0.2791,0.5738,0
-2025-06-13,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,3DMAX,Vitality,16,1,0.5000,0.8209,0
-2025-06-13,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,FaZe,Legacy,11,21,0.5217,0.6622,1
-2025-06-13,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,G2,Aurora,8,6,0.5738,0.5702,1
-2025-06-13,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,The MongolZ,Lynn Vision,5,24,0.5797,0.7083,1
-2025-06-13,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,Virtus.pro,FURIA,13,15,0.4390,0.4407,0
-2025-06-13,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,Natus Vincere,Spirit,7,3,0.5455,0.7400,0
-2025-06-13,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,paiN,Nemiga,22,29,0.2791,0.5571,1
-2025-06-13,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,MOUZ,Liquid,2,10,0.6094,0.3913,1
-2025-06-14,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,Lynn Vision,Legacy,24,21,0.7083,0.6622,0
-2025-06-14,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,paiN,3DMAX,22,16,0.2791,0.5000,1
+2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,Nemiga,Vitality,27,1,0.5571,0.8209,0
+2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,Liquid,The MongolZ,14,5,0.3913,0.5797,0
+2025-06-12,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,paiN,G2,22,7,0.2791,0.5738,0
+2025-06-13,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,3DMAX,Vitality,12,1,0.5000,0.8209,0
+2025-06-13,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,FaZe,Legacy,11,26,0.5217,0.6622,1
+2025-06-13,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,G2,Aurora,7,6,0.5738,0.5702,1
+2025-06-13,BLAST.tv Austin Major 2025,Major,Stage 3,BO1,The MongolZ,Lynn Vision,5,21,0.5797,0.7083,1
+2025-06-13,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,Virtus.pro,FURIA,15,16,0.4390,0.4407,0
+2025-06-13,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,Natus Vincere,Spirit,9,3,0.5455,0.7400,0
+2025-06-13,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,paiN,Nemiga,22,27,0.2791,0.5571,1
+2025-06-13,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,MOUZ,Liquid,2,14,0.6094,0.3913,1
+2025-06-14,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,Lynn Vision,Legacy,21,26,0.7083,0.6622,0
+2025-06-14,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,paiN,3DMAX,22,12,0.2791,0.5000,1
 2025-06-14,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,The MongolZ,FaZe,5,11,0.5797,0.5217,0
 2025-06-14,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,MOUZ,Aurora,2,6,0.6094,0.5702,1
-2025-06-14,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,Virtus.pro,Vitality,13,1,0.4390,0.8209,0
-2025-06-14,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,Natus Vincere,G2,7,8,0.5455,0.5738,1
-2025-06-15,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,MOUZ,Legacy,2,21,0.6094,0.6622,1
-2025-06-15,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,G2,The MongolZ,8,5,0.5738,0.5797,0
-2025-06-15,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,paiN,Virtus.pro,22,13,0.2791,0.4390,1
+2025-06-14,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,Virtus.pro,Vitality,15,1,0.4390,0.8209,0
+2025-06-14,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,Natus Vincere,G2,9,7,0.5455,0.5738,1
+2025-06-15,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,MOUZ,Legacy,2,26,0.6094,0.6622,1
+2025-06-15,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,G2,The MongolZ,7,5,0.5738,0.5797,0
+2025-06-15,BLAST.tv Austin Major 2025,Major,Stage 3,BO3,paiN,Virtus.pro,22,15,0.2791,0.4390,1
 2025-06-19,BLAST.tv Austin Major 2025,Major,Playoffs,BO3,MOUZ,Spirit,2,3,0.6094,0.7400,1
-2025-06-20,BLAST.tv Austin Major 2025,Major,Playoffs,BO3,paiN,FURIA,19,10,0.2791,0.4407,1
-2025-06-20,BLAST.tv Austin Major 2025,Major,Playoffs,BO3,Natus Vincere,Vitality,7,1,0.5455,0.8209,0
-2025-06-20,BLAST.tv Austin Major 2025,Major,Playoffs,BO3,The MongolZ,FaZe,5,9,0.5797,0.5217,1
+2025-06-20,BLAST.tv Austin Major 2025,Major,Playoffs,BO3,paiN,FURIA,22,16,0.2791,0.4407,1
+2025-06-20,BLAST.tv Austin Major 2025,Major,Playoffs,BO3,Natus Vincere,Vitality,9,1,0.5455,0.8209,0
+2025-06-20,BLAST.tv Austin Major 2025,Major,Playoffs,BO3,The MongolZ,FaZe,5,11,0.5797,0.5217,1
 2025-06-21,BLAST.tv Austin Major 2025,Major,Playoffs,BO3,MOUZ,Vitality,2,1,0.6094,0.8209,0
-2025-06-21,BLAST.tv Austin Major 2025,Major,Playoffs,BO3,paiN,The MongolZ,19,5,0.2791,0.5797,0
+2025-06-21,BLAST.tv Austin Major 2025,Major,Playoffs,BO3,paiN,The MongolZ,22,5,0.2791,0.5797,0
 2025-06-22,BLAST.tv Austin Major 2025,Major,Playoffs,BO3,The MongolZ,Vitality,5,1,0.5797,0.8209,0
-2024-11-30,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,Virtus.pro,MIBR,12,19,0.5263,0.5091,0
-2024-11-30,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,FURIA,GamerLegion,8,22,0.5789,0.5385,0
-2024-11-30,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,Complexity,FlyQuest,14,20,0.5667,0.7179,0
-2024-11-30,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,Cloud9,Liquid,35,13,0.5294,0.5435,0
-2024-11-30,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,BIG,Passion UA,18,28,0.5814,0.5913,1
-2024-11-30,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,fnatic,Wildcard,29,24,0.3684,0.5833,0
-2024-11-30,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,The MongolZ,Rare Atom,11,58,0.6458,0.4286,1
-2024-11-30,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,paiN,Imperial,17,26,0.6613,0.5625,1
-2024-11-30,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,fnatic,Cloud9,29,35,0.3684,0.5294,0
-2024-11-30,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,BIG,FlyQuest,18,20,0.5814,0.7179,0
-2024-11-30,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,The MongolZ,MIBR,11,19,0.6458,0.5091,1
-2024-11-30,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,Complexity,Passion UA,14,28,0.5667,0.5913,0
-2024-11-30,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,Virtus.pro,Rare Atom,12,58,0.5263,0.4286,1
-2024-11-30,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,Liquid,Wildcard,13,24,0.5435,0.5833,1
-2024-11-30,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,FURIA,Imperial,8,26,0.5789,0.5625,1
-2024-11-30,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,paiN,GamerLegion,17,22,0.6613,0.5385,0
-2024-12-01,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,MIBR,Passion UA,19,28,0.5091,0.5913,0
-2024-12-01,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,Virtus.pro,BIG,12,18,0.5263,0.5814,0
-2024-12-01,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,paiN,Cloud9,17,35,0.6613,0.5294,1
-2024-12-01,Perfect World Shanghai Major 2024,Major,Stage 1,BO1,FURIA,Wildcard,8,24,0.5789,0.5833,1
-2024-12-01,Perfect World Shanghai Major 2024,Major,Stage 1,BO3,Liquid,FlyQuest,13,20,0.5435,0.7179,1
-2024-12-01,Perfect World Shanghai Major 2024,Major,Stage 1,BO3,fnatic,Rare Atom,29,58,0.3684,0.4286,0
-2024-12-01,Perfect World Shanghai Major 2024,Major,Stage 1,BO3,Complexity,Imperial,14,26,0.5667,0.5625,1
-2024-12-01,Perfect World Shanghai Major 2024,Major,Stage 1,BO3,The MongolZ,GamerLegion,11,22,0.6458,0.5385,1
-2024-12-02,Perfect World Shanghai Major 2024,Major,Stage 1,BO3,BIG,FURIA,18,8,0.5814,0.5789,0
-2024-12-02,Perfect World Shanghai Major 2024,Major,Stage 1,BO3,MIBR,Rare Atom,19,58,0.5091,0.4286,1
-2024-12-02,Perfect World Shanghai Major 2024,Major,Stage 1,BO3,Complexity,Cloud9,14,35,0.5667,0.5294,1
-2024-12-02,Perfect World Shanghai Major 2024,Major,Stage 1,BO3,paiN,FlyQuest,17,20,0.6613,0.7179,1
-2024-12-02,Perfect World Shanghai Major 2024,Major,Stage 1,BO3,GamerLegion,Passion UA,22,28,0.5385,0.5913,1
-2024-12-02,Perfect World Shanghai Major 2024,Major,Stage 1,BO3,Virtus.pro,Wildcard,12,24,0.5263,0.5833,0
-2024-12-03,Perfect World Shanghai Major 2024,Major,Stage 1,BO3,Complexity,BIG,14,19,0.5667,0.5814,0
-2024-12-03,Perfect World Shanghai Major 2024,Major,Stage 1,BO3,MIBR,FlyQuest,17,21,0.5091,0.7179,1
-2024-12-03,Perfect World Shanghai Major 2024,Major,Stage 1,BO3,Wildcard,Passion UA,22,27,0.5833,0.5913,1
-2024-12-05,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,Natus Vincere,Liquid,1,13,0.6667,0.5435,1
-2024-12-05,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,G2,The MongolZ,2,9,0.6531,0.6458,0
-2024-12-05,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,Vitality,GamerLegion,3,20,0.6410,0.5385,1
-2024-12-05,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,Spirit,FURIA,4,8,0.6038,0.5789,0
-2024-12-05,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,MOUZ,paiN,5,15,0.4889,0.6613,1
-2024-12-05,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,FaZe,Wildcard,6,22,0.5417,0.5833,1
-2024-12-05,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,HEROIC,BIG,7,19,0.6667,0.5814,1
-2024-12-05,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,3DMAX,MIBR,16,17,0.6092,0.5091,0
-2024-12-05,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,Liquid,GamerLegion,13,20,0.5435,0.5385,1
-2024-12-05,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,FURIA,Vitality,8,3,0.5789,0.6410,0
-2024-12-05,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,Spirit,Wildcard,4,22,0.6038,0.5833,1
-2024-12-05,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,MOUZ,The MongolZ,5,9,0.4889,0.6458,0
-2024-12-05,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,G2,BIG,2,19,0.6531,0.5814,1
-2024-12-05,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,Natus Vincere,MIBR,1,17,0.6667,0.5091,0
-2024-12-05,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,paiN,3DMAX,15,16,0.6613,0.6092,0
-2024-12-05,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,FaZe,HEROIC,6,7,0.5417,0.6667,0
-2024-12-06,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,Natus Vincere,Spirit,1,4,0.6667,0.6038,0
-2024-12-06,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,Liquid,FURIA,13,8,0.5435,0.5789,1
-2024-12-06,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,3DMAX,G2,16,2,0.6092,0.6531,0
-2024-12-06,Perfect World Shanghai Major 2024,Major,Stage 2,BO1,MOUZ,FaZe,5,6,0.4889,0.5417,0
-2024-12-06,Perfect World Shanghai Major 2024,Major,Stage 2,BO3,MIBR,Vitality,17,3,0.5091,0.6410,0
-2024-12-06,Perfect World Shanghai Major 2024,Major,Stage 2,BO3,GamerLegion,Wildcard,20,22,0.5385,0.5833,1
-2024-12-06,Perfect World Shanghai Major 2024,Major,Stage 2,BO3,paiN,BIG,15,19,0.6613,0.5814,1
-2024-12-06,Perfect World Shanghai Major 2024,Major,Stage 2,BO3,The MongolZ,HEROIC,9,7,0.6458,0.6667,1
-2024-12-07,Perfect World Shanghai Major 2024,Major,Stage 2,BO3,G2,FaZe,2,6,0.6531,0.5417,1
-2024-12-07,Perfect World Shanghai Major 2024,Major,Stage 2,BO3,MOUZ,3DMAX,5,16,0.4889,0.6092,1
-2024-12-07,Perfect World Shanghai Major 2024,Major,Stage 2,BO3,Natus Vincere,GamerLegion,1,20,0.6667,0.5385,1
-2024-12-07,Perfect World Shanghai Major 2024,Major,Stage 2,BO3,Liquid,MIBR,13,17,0.5435,0.5091,1
-2024-12-07,Perfect World Shanghai Major 2024,Major,Stage 2,BO3,Spirit,HEROIC,4,7,0.6038,0.6667,1
-2024-12-07,Perfect World Shanghai Major 2024,Major,Stage 2,BO3,paiN,FURIA,15,8,0.6613,0.5789,0
-2024-12-08,Perfect World Shanghai Major 2024,Major,Stage 2,BO3,MOUZ,MIBR,5,17,0.4889,0.5091,1
-2024-12-08,Perfect World Shanghai Major 2024,Major,Stage 2,BO3,Natus Vincere,HEROIC,1,7,0.6667,0.6667,0
-2024-12-08,Perfect World Shanghai Major 2024,Major,Stage 2,BO3,FaZe,FURIA,6,8,0.5417,0.5789,1
-2024-12-12,Perfect World Shanghai Major 2024,Major,Playoffs,BO3,MOUZ,The MongolZ,5,7,0.4889,0.6458,1
-2024-12-12,Perfect World Shanghai Major 2024,Major,Playoffs,BO3,Liquid,Spirit,9,4,0.5435,0.6038,0
-2024-12-13,Perfect World Shanghai Major 2024,Major,Playoffs,BO3,G2,HEROIC,1,8,0.6531,0.6667,1
-2024-12-13,Perfect World Shanghai Major 2024,Major,Playoffs,BO3,FaZe,Vitality,6,3,0.5417,0.6410,1
-2024-12-14,Perfect World Shanghai Major 2024,Major,Playoffs,BO3,MOUZ,Spirit,5,4,0.4889,0.6038,0
-2024-12-14,Perfect World Shanghai Major 2024,Major,Playoffs,BO3,G2,FaZe,1,6,0.6531,0.5417,0
-2024-12-15,Perfect World Shanghai Major 2024,Major,Playoffs,BO3,FaZe,Spirit,6,4,0.5417,0.6038,0
-2024-03-17,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,The MongolZ,Eternal Fire,22,11,0.6897,0.6522,0
-2024-03-17,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,Cloud9,ECSTATIC,10,28,0.5625,0.6230,1
-2024-03-17,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,paiN,Apeks,38,14,0.6000,0.5111,1
-2024-03-17,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,HEROIC,Lynn Vision,12,43,0.5926,0.6400,1
-2024-03-17,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,ENCE,Imperial,9,31,0.5313,0.7037,0
-2024-03-17,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,SAW,KOI,18,27,0.7778,0.6154,1
-2024-03-17,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,GamerLegion,AMKAL,15,26,0.5143,0.5882,1
-2024-03-17,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,FURIA,Legacy,16,35,0.5789,0.6786,0
-2024-03-17,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,paiN,Eternal Fire,38,11,0.6000,0.6522,0
-2024-03-17,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,The MongolZ,ECSTATIC,22,28,0.6897,0.6230,0
-2024-03-17,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,HEROIC,Imperial,12,31,0.5926,0.7037,1
-2024-03-17,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,Apeks,AMKAL,14,26,0.5111,0.5882,1
-2024-03-17,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,Cloud9,Legacy,10,35,0.5625,0.6786,1
-2024-03-17,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,ENCE,KOI,9,27,0.5313,0.6154,1
-2024-03-17,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,GamerLegion,SAW,15,18,0.5143,0.7778,0
-2024-03-17,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,FURIA,Lynn Vision,16,43,0.5789,0.6400,0
-2024-03-18,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,paiN,ENCE,38,9,0.6000,0.5313,1
-2024-03-18,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,Imperial,Apeks,31,14,0.7037,0.5111,1
-2024-03-18,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,GamerLegion,Legacy,15,35,0.5143,0.6786,1
-2024-03-18,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO1,Lynn Vision,ECSTATIC,43,28,0.6400,0.6230,0
-2024-03-18,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO3,HEROIC,Eternal Fire,12,11,0.5926,0.6522,1
-2024-03-18,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO3,The MongolZ,AMKAL,22,26,0.6897,0.5882,1
-2024-03-18,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO3,Cloud9,SAW,10,18,0.5625,0.7778,1
-2024-03-18,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO3,FURIA,KOI,16,27,0.5789,0.6154,1
-2024-03-19,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO3,The MongolZ,Lynn Vision,20,40,0.6897,0.6400,1
-2024-03-19,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO3,GamerLegion,Eternal Fire,15,13,0.5143,0.6522,0
-2024-03-19,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO3,Apeks,Legacy,14,30,0.5111,0.6786,0
-2024-03-19,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO3,paiN,SAW,31,17,0.6000,0.7778,1
-2024-03-19,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO3,ENCE,FURIA,10,16,0.5313,0.5789,0
-2024-03-19,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO3,Imperial,ECSTATIC,26,28,0.7037,0.6230,0
-2024-03-20,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO3,The MongolZ,Legacy,20,30,0.6897,0.6786,1
-2024-03-20,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO3,Imperial,GamerLegion,26,15,0.7037,0.5143,1
-2024-03-20,PGL CS2 Major Copenhagen 2024,Major,Stage 1,BO3,FURIA,SAW,16,17,0.5789,0.7778,1
-2024-03-21,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,Natus Vincere,The MongolZ,6,20,0.6552,0.6897,1
-2024-03-21,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,MOUZ,ECSTATIC,4,28,0.6522,0.6230,1
-2024-03-21,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,Virtus.pro,Imperial,7,26,0.7500,0.7037,0
-2024-03-21,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,Vitality,Eternal Fire,3,13,0.6154,0.6522,0
-2024-03-21,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,paiN,Complexity,31,12,0.6000,0.5000,0
-2024-03-21,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,FaZe,HEROIC,11,1,0.5806,0.5926,0
-2024-03-21,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,G2,FURIA,5,16,0.6296,0.5789,1
-2024-03-21,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,Cloud9,Spirit,9,2,0.5625,0.7632,0
-2024-03-21,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,The MongolZ,Vitality,20,3,0.6897,0.6154,0
-2024-03-21,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,MOUZ,Eternal Fire,4,13,0.6522,0.6522,1
-2024-03-21,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,paiN,Virtus.pro,31,7,0.6000,0.7500,0
-2024-03-21,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,Complexity,HEROIC,12,11,0.5000,0.5926,1
-2024-03-21,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,Cloud9,ECSTATIC,9,28,0.5625,0.6230,1
-2024-03-21,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,Natus Vincere,G2,6,5,0.6552,0.6296,1
-2024-03-21,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,FaZe,FURIA,11,16,0.5806,0.5789,1
-2024-03-21,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,Spirit,Imperial,2,26,0.7632,0.7037,1
-2024-03-22,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,Virtus.pro,HEROIC,7,11,0.7500,0.5926,1
-2024-03-22,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,Cloud9,G2,9,5,0.5625,0.6296,1
-2024-03-22,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,FaZe,Eternal Fire,11,13,0.5806,0.6522,0
-2024-03-22,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO1,Imperial,Vitality,26,3,0.7037,0.6154,0
-2024-03-22,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO3,MOUZ,Complexity,4,12,0.6522,0.5000,1
-2024-03-22,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO3,paiN,The MongolZ,31,20,0.6000,0.6897,1
-2024-03-22,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO3,Natus Vincere,Spirit,6,2,0.6552,0.7632,0
-2024-03-22,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO3,FURIA,ECSTATIC,16,28,0.5789,0.6230,0
-2024-03-23,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO3,FaZe,Imperial,12,26,0.5806,0.7037,1
-2024-03-23,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO3,Virtus.pro,Eternal Fire,7,13,0.7500,0.6522,0
-2024-03-23,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO3,G2,ECSTATIC,5,28,0.6296,0.6230,1
-2024-03-23,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO3,Complexity,Vitality,12,3,0.5000,0.6154,0
-2024-03-23,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO3,paiN,HEROIC,31,11,0.6000,0.5926,1
-2024-03-23,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO3,Natus Vincere,Cloud9,6,9,0.6552,0.5625,0
-2024-03-24,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO3,Complexity,FaZe,12,1,0.5000,0.5806,0
-2024-03-24,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO3,Virtus.pro,G2,7,5,0.7500,0.6296,0
-2024-03-24,PGL CS2 Major Copenhagen 2024,Major,Stage 2,BO3,Natus Vincere,paiN,6,31,0.6552,0.6000,1
-2024-03-28,PGL CS2 Major Copenhagen 2024,Major,Playoffs,BO3,Cloud9,Vitality,7,3,0.5625,0.6154,0
-2024-03-28,PGL CS2 Major Copenhagen 2024,Major,Playoffs,BO3,FaZe,Spirit,1,2,0.5806,0.7632,1
-2024-03-29,PGL CS2 Major Copenhagen 2024,Major,Playoffs,BO3,Natus Vincere,Eternal Fire,6,12,0.6552,0.6522,1
-2024-03-29,PGL CS2 Major Copenhagen 2024,Major,Playoffs,BO3,MOUZ,G2,4,5,0.6522,0.6296,0
-2024-03-30,PGL CS2 Major Copenhagen 2024,Major,Playoffs,BO3,FaZe,Vitality,1,3,0.5806,0.6154,1
-2024-03-30,PGL CS2 Major Copenhagen 2024,Major,Playoffs,BO3,Natus Vincere,G2,6,5,0.6552,0.6296,1
-2024-03-31,PGL CS2 Major Copenhagen 2024,Major,Playoffs,BO3,Natus Vincere,FaZe,6,1,0.6552,0.5806,1
 2026-11-02,IEM Beijing 2026,S-Tier LAN,Groups,BO3,HEROIC,B8,24,22,0.6883,0.5472,1
 2026-11-02,IEM Beijing 2026,S-Tier LAN,Groups,BO3,The MongolZ,Legacy,16,8,0.5263,0.5574,1
 2026-11-02,IEM Beijing 2026,S-Tier LAN,Groups,BO3,Liquid,Aurora,23,5,0.5797,0.6029,1

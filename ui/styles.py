@@ -1,4 +1,5 @@
 # CSS custom HLTV HUD + Bracket Pick'Em (3:0, 3:1/3:2, 0:3 + LOCK/VALUE/RISKY)
+import pandas as pd
 import streamlit as st
 
 
@@ -57,6 +58,12 @@ def inject_hud_css():
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 8px;
+        }
+        .tag-vol {
+            color: #8b949e;
+            font-size: 11px;
+            margin-right: 6px;
         }
         .badge-lock { background: #1f6feb; color: white; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 800; }
         .badge-value { background: #238636; color: white; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 800; }
@@ -86,13 +93,26 @@ def get_confidence_badge(prob_pct: float, category: str) -> str:
         return '<span class="badge-risky">RISKY</span>'
 
 
+def _vol_span(row) -> str:
+    if "Volatilitate (%)" in row and pd.notna(row["Volatilitate (%)"]):
+        return f'<span class="tag-vol">Vol: {float(row["Volatilitate (%)"]):.1f}%</span>'
+    return ""
+
+
+def _seed_val(row, fallback_idx: int) -> int:
+    raw_seed = row.get("VRS Seed", row.get("Seed", fallback_idx + 1))
+    if pd.notna(raw_seed):
+        return int(raw_seed)
+    return fallback_idx + 1
+
+
 def render_hltv_pickem_bracket(df_3_0, df_adv, df_0_3):
     col_left, col_right = st.columns([1, 1.35])
 
     with col_left:
         slots_3_0 = "".join(
-            f'<div class="pick-slot"><span><strong>#{int(r["VRS Seed"])} {r["Echipa"]}</strong></span><span>{r["3-0 (%)"]:.1f}% {get_confidence_badge(r["3-0 (%)"], "3-0")}</span></div>'
-            for _, r in df_3_0.iterrows()
+            f'<div class="pick-slot"><span><strong>#{_seed_val(r, idx)} {r["Echipa"]}</strong></span><span>{_vol_span(r)}{r["3-0 (%)"]:.1f}% {get_confidence_badge(r["3-0 (%)"], "3-0")}</span></div>'
+            for idx, (_, r) in enumerate(df_3_0.iterrows())
         )
         st.markdown(
             f'<div class="pickem-zone-green"><div class="pickem-title">🔥 3:0 ADVANCE UNDEFEATED (2 SLOTS)</div>{slots_3_0}</div>',
@@ -100,8 +120,8 @@ def render_hltv_pickem_bracket(df_3_0, df_adv, df_0_3):
         )
 
         slots_0_3 = "".join(
-            f'<div class="pick-slot"><span><strong>#{int(r["VRS Seed"])} {r["Echipa"]}</strong></span><span>{r["0-3 (%)"]:.1f}% {get_confidence_badge(r["0-3 (%)"], "0-3")}</span></div>'
-            for _, r in df_0_3.iterrows()
+            f'<div class="pick-slot"><span><strong>#{_seed_val(r, idx)} {r["Echipa"]}</strong></span><span>{_vol_span(r)}{r["0-3 (%)"]:.1f}% {get_confidence_badge(r["0-3 (%)"], "0-3")}</span></div>'
+            for idx, (_, r) in enumerate(df_0_3.iterrows())
         )
         st.markdown(
             f'<div class="pickem-zone-red"><div class="pickem-title">💀 0:3 ELIMINATED WINLESS (2 SLOTS)</div>{slots_0_3}</div>',
@@ -110,8 +130,8 @@ def render_hltv_pickem_bracket(df_3_0, df_adv, df_0_3):
 
     with col_right:
         slots_adv = "".join(
-            f'<div class="pick-slot"><span><strong>#{int(r["VRS Seed"])} {r["Echipa"]}</strong> <span style="color:#8b949e; font-size:12px;">(Qual: {r["Calificare Total (%)"]:.1f}%)</span></span><span>{r["3-1 / 3-2 (%)"]:.1f}% {get_confidence_badge(r["3-1 / 3-2 (%)"], "ADV")}</span></div>'
-            for _, r in df_adv.iterrows()
+            f'<div class="pick-slot"><span><strong>#{_seed_val(r, idx)} {r["Echipa"]}</strong> <span style="color:#8b949e; font-size:12px;">(Qual: {r["Calificare Total (%)"]:.1f}%)</span></span><span>{_vol_span(r)}{r["3-1 / 3-2 (%)"]:.1f}% {get_confidence_badge(r["3-1 / 3-2 (%)"], "ADV")}</span></div>'
+            for idx, (_, r) in enumerate(df_adv.iterrows())
         )
         st.markdown(
             f'<div class="pickem-zone-green"><div class="pickem-title">✅ 3:1 OR 3:2 ADVANCE (6 SLOTS — ANTI 3-0 CURSE)</div>{slots_adv}</div>',

@@ -1,16 +1,23 @@
 # Hub-ul principal Major: Pick'Em Bracket + Match-by-Match (Map Veto/Score/Rounds) + Playoffs
 import streamlit as st
 import pandas as pd
-from core.model_engine import load_predictor, predict_match_context
+from core.model_engine import load_predictor, predict_match_context, predict_match_with_team_stats
 from core.swiss_sim import simulate_swiss_stage, REGION_SOS_DEFAULT
 from core.playoff_sim import simulate_playoffs_exact
-from core.team_stats_engine import load_team_stats, compute_map_veto_edge, assess_match_risk
+from core.team_stats_engine import (
+    load_team_stats,
+    get_latest_vrs_ranks,
+    compute_map_veto_edge,
+    assess_match_risk,
+    compute_h2h_history,
+)
 from ui.styles import render_hltv_pickem_bracket
 
-try:
-    from core.model_engine import predict_match_with_team_stats
-except ImportError:
-    predict_match_with_team_stats = None
+
+def _default_as_of_date() -> str:
+    if st.session_state.get("blind_test_enabled", True):
+        return str(st.session_state.get("team_stats_as_of") or st.session_state.get("cutoff_date") or "2026-06-02")
+    return ""
 
 
 def render_major_hub():
@@ -18,6 +25,8 @@ def render_major_hub():
     if model is None:
         st.warning("⚠️ Modelul nu este încă antrenat! Mergi în tab-ul **🧪 DATA & MODEL LAB** și apasă **ANTRENEAZĂ REȚEAUA**.")
         return
+
+    default_as_of = _default_as_of_date()
 
     sub_pickem, sub_match, sub_playoffs = st.tabs([
         "🏆 MAJOR PICK'EM (SWISS VRS + BUCHHOLZ)",
@@ -32,7 +41,7 @@ def render_major_hub():
         st.markdown("### 🏆 Valve Major Swiss Pick'Em Engine")
         st.caption("Ordinea rândurilor 1–16 reprezintă **VRS Seeding-ul oficial** (Runda 1: 1 vs 9 ... 8 vs 16; Rundele 2–5: Buchholz + VRS Seed).")
 
-        c_cfg1, c_cfg2, c_cfg3 = st.columns([2, 1, 1])
+        c_cfg1, c_cfg2, c_cfg3, c_cfg4 = st.columns([2, 1, 1, 1.3])
         with c_cfg1:
             stage_mode = st.selectbox(
                 "Etapa Majorului (Format meciuri)",
@@ -46,6 +55,8 @@ def render_major_hub():
             n_sims = st.selectbox("Simulări Monte Carlo", [2000, 5000, 10000], index=2)
         with c_cfg3:
             use_sos = st.checkbox("Ajustare Regiune / SoS", value=True, help="Penalizează ușor winrate-ul umflat din regiuni/turnee mai accesibile.")
+        with c_cfg4:
+            use_tstats_swiss = st.checkbox("Detaliu Team Stats", value=True, help="Integrează delta față de baseline, penalizarea de distress și volatilitatea.")
 
         default_teams = pd.DataFrame({
             'team': [
@@ -82,8 +93,20 @@ def render_major_hub():
             if not use_sos:
                 sim_input['region'] = "Europe (Tier 1/1.5)"
 
+            as_of_val = default_as_of or None
+
             with st.spinner(f"Rulăm {n_sims} simulări oficiale Valve Major (VRS + Buchholz)..."):
-                sim_res = simulate_swiss_stage(sim_input, model, scaler, n_sims=n_sims, stage_mode=stage_mode, is_major=True)
+                sim_res = simulate_swiss_stage(
+                    sim_input,
+                    model,
+                    scaler,
+                    n_sims=n_sims,
+                    stage_mode=stage_mode,
+                    is_major=True,
+                    as_of_date=as_of_val,
+                    team_stats_csv="data/team_stats.csv",
+                    use_team_stats=use_tstats_swiss,
+                )
 
             df_3_0 = sim_res.sort_values('3-0 (%)', ascending=False).head(2)
             df_0_3 = sim_res.sort_values('0-3 (%)', ascending=False).head(2)
@@ -101,14 +124,18 @@ def render_major_hub():
             )
             st.download_button("📥 Export Pick'Em (.txt)", export_txt, file_name="major_pickem.txt")
 
+            fmt_dict = {
+                '3-0 (%)': '{:.1f}%',
+                'Calificare Total (%)': '{:.1f}%',
+                '3-1 / 3-2 (%)': '{:.1f}%',
+                '0-3 (%)': '{:.1f}%',
+            }
+            if 'Volatilitate (%)' in sim_res.columns:
+                fmt_dict['Volatilitate (%)'] = '{:.1f}%'
+
             with st.expander("📊 Tabel Complet Probabilități (Toate cele 16 echipe)", expanded=True):
                 st.dataframe(
-                    sim_res.style.format({
-                        '3-0 (%)': '{:.1f}%',
-                        'Calificare Total (%)': '{:.1f}%',
-                        '3-1 / 3-2 (%)': '{:.1f}%',
-                        '0-3 (%)': '{:.1f}%'
-                    }),
+                    sim_res.style.format(fmt_dict),
                     use_container_width=True
                 )
 
@@ -116,84 +143,104 @@ def render_major_hub():
     # SUB-TAB 2: MATCH-BY-MATCH & MAP ANALYZER
     # =========================================================
     with sub_match:
-        st.markdown("### ⚔️ Analizor Meci Individual (Stage / Map Edge / H2H / Scor)")
+        st.markdown("### ⚔️ Analizor Meci Individual (VRS Rank / Veto Simulat / H2H / Scor)")
 
         as_of_cutoff = st.text_input(
-            "Dată limită snapshot-uri `team_stats.csv` (opțional, ex. `2026-06-02` pentru Blind Backtest)",
-            value="",
+            "Dată limită snapshot-uri `team_stats.csv` & `matches.csv` (ex. `2026-06-02` pentru Blind Backtest)",
+            value=default_as_of,
             key="h2h_as_of_date"
         ).strip() or None
 
         team_stats_map = load_team_stats("data/team_stats.csv", as_of_date=as_of_cutoff)
+        vrs_rank_map = get_latest_vrs_ranks("data/matches.csv", as_of_date=as_of_cutoff)
 
         c1, c_mid, c2 = st.columns([2, 1.3, 2])
 
         with c1:
             st.subheader("🔵 TEAM A")
-            team_a = st.text_input("Echipă A", value="Vitality")
-            sa = team_stats_map.get(team_a.strip().lower())
-            rank_a = st.number_input("HLTV Rank A", 1, 200, 1)
-            default_wr_a = float(sa["top20_wr"]) if sa else 0.78
-            wr_a = st.slider("3M Winrate A", 0.0, 1.0, round(default_wr_a, 2), 0.01)
+            team_a = st.text_input("Echipă A", value="Vitality", key="inp_team_a")
+            key_a = team_a.strip().lower()
+            sa = team_stats_map.get(key_a)
+            auto_rank_a = int(vrs_rank_map.get(key_a, 1))
+            rank_a = st.number_input("VRS Rank A", 1, 200, auto_rank_a, key=f"vrs_rank_a_{key_a}")
+            auto_wr_a = float(sa["combined_2026_wr"]) if sa else 0.75
+            wr_a = st.slider("Winrate (2026 / Recent 20m) A", 0.0, 1.0, round(auto_wr_a, 2), 0.01, key=f"wr_a_{key_a}")
             reg_a = st.selectbox("Context Turnee A", list(REGION_SOS_DEFAULT.keys()), index=0, key="reg_a")
             if sa:
-                st.caption(f"✅ Stats A: Top20 WR `{sa['top20_wr']*100:.1f}%` ({sa['top20_maps']}/{sa['maps_played']} maps) | Eco K/D `{sa['eco_kd']}` (`{sa['eco_per_map']}` eco/map)")
+                st.caption(
+                    f"✅ Stats A: 2026/Rec WR `{sa['combined_2026_wr']*100:.1f}%` (Rec20 `{sa['recent_wr']*100:.1f}%`, "
+                    f"`{sa['recent_avg_round_diff']:+.2f}` RD) | Top20 WR `{sa['top20_wr']*100:.1f}%` | Eff. R2 Break `{sa['effective_r2_break']*100:.1f}%`"
+                )
             else:
                 st.caption("⚠️ Team A nu e în `team_stats.csv` — folosește valorile manuale.")
 
         with c2:
             st.subheader("🟠 TEAM B")
-            team_b = st.text_input("Echipă B", value="Falcons")
-            sb = team_stats_map.get(team_b.strip().lower())
-            rank_b = st.number_input("HLTV Rank B", 1, 200, 4)
-            default_wr_b = float(sb["top20_wr"]) if sb else 0.64
-            wr_b = st.slider("3M Winrate B", 0.0, 1.0, round(default_wr_b, 2), 0.01)
+            team_b = st.text_input("Echipă B", value="FUT", key="inp_team_b")
+            key_b = team_b.strip().lower()
+            sb = team_stats_map.get(key_b)
+            auto_rank_b = int(vrs_rank_map.get(key_b, 8))
+            rank_b = st.number_input("VRS Rank B", 1, 200, auto_rank_b, key=f"vrs_rank_b_{key_b}")
+            auto_wr_b = float(sb["combined_2026_wr"]) if sb else 0.55
+            wr_b = st.slider("Winrate (2026 / Recent 20m) B", 0.0, 1.0, round(auto_wr_b, 2), 0.01, key=f"wr_b_{key_b}")
             reg_b = st.selectbox("Context Turnee B", list(REGION_SOS_DEFAULT.keys()), index=0, key="reg_b")
             if sb:
-                st.caption(f"✅ Stats B: Top20 WR `{sb['top20_wr']*100:.1f}%` ({sb['top20_maps']}/{sb['maps_played']} maps) | Eco K/D `{sb['eco_kd']}` (`{sb['eco_per_map']}` eco/map)")
+                st.caption(
+                    f"✅ Stats B: 2026/Rec WR `{sb['combined_2026_wr']*100:.1f}%` (Rec20 `{sb['recent_wr']*100:.1f}%`, "
+                    f"`{sb['recent_avg_round_diff']:+.2f}` RD) | Top20 WR `{sb['top20_wr']*100:.1f}%` | Eff. R2 Break `{sb['effective_r2_break']*100:.1f}%`"
+                )
             else:
                 st.caption("⚠️ Team B nu e în `team_stats.csv` — folosește valorile manuale.")
-
-        auto_veto = round(compute_map_veto_edge(sa, sb), 2)
 
         with c_mid:
             st.subheader("⚙️ CONTEXT")
             stage_ctx = st.selectbox("Fază Turneu", ["Stage 1", "Stage 2", "Stage 3", "Playoffs (QF/SF)", "Grand Final"])
             default_fmt_idx = 2 if stage_ctx == "Grand Final" else (1 if stage_ctx in ["Stage 3", "Playoffs (QF/SF)"] else 0)
             match_fmt = st.selectbox("Format", ["BO1", "BO3", "BO5"], index=default_fmt_idx)
-            map_edge = st.slider("Avantaj Hartă / Veto (-0.25 B .. +0.25 A)", -0.25, 0.25, auto_veto, 0.01)
-            h2h_edge = st.slider("Avantaj H2H Recent (-0.20 B .. +0.20 A)", -0.20, 0.20, 0.00, 0.01)
+            auto_veto = round(compute_map_veto_edge(sa, sb, match_format=match_fmt), 2)
+            map_edge = st.slider(
+                "Avantaj Hartă / Veto Simulat (-0.25 B .. +0.25 A)",
+                -0.25,
+                0.25,
+                auto_veto,
+                0.01,
+                key=f"veto_{key_a}_{key_b}_{match_fmt}"
+            )
+            h2h_preview = compute_h2h_history(team_a, team_b, as_of_date=as_of_cutoff)
+            auto_h2h = round(float(h2h_preview.get("h2h_edge", 0.0)), 2)
+            h2h_edge = st.slider(
+                "Avantaj H2H Recent (-0.20 B .. +0.20 A)",
+                -0.20,
+                0.20,
+                auto_h2h,
+                0.01,
+                key=f"h2h_{key_a}_{key_b}_{as_of_cutoff}"
+            )
+            if h2h_preview.get("h2h_games", 0) > 0:
+                st.caption(
+                    f"H2H istoric (< {as_of_cutoff or 'all'}): {h2h_preview['h2h_wins_a']}/{h2h_preview['h2h_games']} "
+                    f"pentru {team_a} (edge `{auto_h2h:+.2f}`)"
+                )
             calc_btn = st.button("🔥 CALCULEAZĂ MECIUL", type="primary", use_container_width=True)
 
         if calc_btn:
-            if predict_match_with_team_stats is not None:
-                res = predict_match_with_team_stats(
-                    model=model,
-                    scaler=scaler,
-                    team_a=team_a,
-                    team_b=team_b,
-                    rank_a=rank_a,
-                    rank_b=rank_b,
-                    fallback_wr_a=wr_a,
-                    fallback_wr_b=wr_b,
-                    match_format=match_fmt,
-                    event_tier="Major",
-                    sos_adj_a=REGION_SOS_DEFAULT[reg_a],
-                    sos_adj_b=REGION_SOS_DEFAULT[reg_b],
-                    as_of_date=as_of_cutoff,
-                    manual_map_edge=map_edge,
-                    h2h_edge_a=h2h_edge,
-                )
-            else:
-                res = predict_match_context(
-                    model, scaler, rank_a, rank_b, wr_a, wr_b,
-                    match_format=match_fmt,
-                    event_tier="Major",
-                    sos_adj_a=REGION_SOS_DEFAULT[reg_a],
-                    sos_adj_b=REGION_SOS_DEFAULT[reg_b],
-                    map_edge_a=map_edge,
-                    h2h_edge_a=h2h_edge
-                )
+            res = predict_match_with_team_stats(
+                model=model,
+                scaler=scaler,
+                team_a=team_a,
+                team_b=team_b,
+                rank_a=rank_a,
+                rank_b=rank_b,
+                fallback_wr_a=wr_a,
+                fallback_wr_b=wr_b,
+                match_format=match_fmt,
+                event_tier="Major",
+                sos_adj_a=REGION_SOS_DEFAULT[reg_a],
+                sos_adj_b=REGION_SOS_DEFAULT[reg_b],
+                as_of_date=as_of_cutoff,
+                manual_map_edge=map_edge,
+                h2h_edge_a=h2h_edge,
+            )
 
             if "upset_risk_pct" not in res or "volatility_score" not in res:
                 risk_info = assess_match_risk(
@@ -206,6 +253,8 @@ def render_major_hub():
                     eco_per_map_b=sb.get("eco_per_map") if sb else None,
                     reliability_a=sa.get("reliability", 0.7) if sa else 0.7,
                     reliability_b=sb.get("reliability", 0.7) if sb else 0.7,
+                    r2_break_a=sa.get("effective_r2_break") if sa else None,
+                    r2_break_b=sb.get("effective_r2_break") if sb else None,
                 )
                 res.update(risk_info)
 
@@ -232,11 +281,21 @@ def render_major_hub():
                     <div style="color:#8b949e;">Map Win Prob: {(1-res['p_map'])*100:.1f}%</div>
                 </div>""", unsafe_allow_html=True)
 
+            if res.get("volatility_level") == "High" or float(res.get("volatility_score", 0.0)) >= 60.0:
+                st.warning(
+                    f"⚠️ **ANUNȚ VOLATILITATE RIDICATĂ:** Meci cu risc mare de variație / surpriză "
+                    f"(Volatility Score: **{res['volatility_score']:.1f}/100**, Upset Risk: **{res['upset_risk_pct']:.1f}%**)."
+                )
+
             st.markdown("---")
-            m1, m2, m3 = st.columns(3)
+            m1, m2, m3, m4 = st.columns(4)
             m1.metric("⚡ Upset Risk", f"{res['upset_risk_pct']:.1f}%")
             m2.metric("🌊 Volatility Score", f"{res['volatility_score']:.1f} / 100")
-            m3.metric("🛡️ Trust Level", f"{res['badge']} — {res['trust_label']}")
+            m3.metric("📈 Calibrated Vol.", f"{res.get('volatility', 0.5)*100:.1f}% ({res.get('volatility_level', 'N/A')})")
+            m4.metric("🛡️ Trust Level", f"{res['badge']} — {res['trust_label']}")
+
+            if res.get("volatility_reasons"):
+                st.caption("Factori volatilitate: " + " • ".join(res["volatility_reasons"]))
 
     # =========================================================
     # SUB-TAB 3: MAJOR PLAYOFFS BRACKET (QF BO3 -> SF BO3 -> GF BO5)
@@ -255,15 +314,25 @@ def render_major_hub():
         edited_qf = st.data_editor(default_qf, num_rows="fixed", use_container_width=True, disabled=['slot'])
 
         if st.button("👑 SIMULEAZĂ PLAYOFFS (EXACT)", type="primary", use_container_width=True):
-            summary_df, qf_list = simulate_playoffs_exact(edited_qf, model, scaler, event_tier="Major")
+            as_of_val = default_as_of or None
+            summary_df, qf_list = simulate_playoffs_exact(
+                edited_qf,
+                model,
+                scaler,
+                event_tier="Major",
+                as_of_date=as_of_val,
+                team_stats_csv="data/team_stats.csv",
+                use_team_stats=True,
+            )
 
             st.markdown("#### Quarter-Finals (BO3)")
             q_cols = st.columns(4)
             for idx, m in enumerate(qf_list):
+                vol_lbl = m.get("volatility_level", "Medium")
                 with q_cols[idx]:
                     st.markdown(f"""
                     <div class="prob-box" style="padding:12px;">
-                        <div style="color:#8b949e; font-size:12px;">{m['match']} (BO3)</div>
+                        <div style="color:#8b949e; font-size:12px;">{m['match']} (BO3) • Vol: {vol_lbl}</div>
                         <div style="margin-top:6px;"><strong>{m['team_a']}</strong>: {m['prob_a']*100:.1f}%</div>
                         <div><strong>{m['team_b']}</strong>: {m['prob_b']*100:.1f}%</div>
                         <div style="color:#de9b35; font-size:12px; margin-top:6px;">Pick: {m['pick']}</div>
